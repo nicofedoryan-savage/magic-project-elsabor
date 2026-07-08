@@ -26,8 +26,6 @@ const capolavori = [
     note: "Cheesecake al mango con coulis di frutti rossi, meringhe frantumate e bosco di more.",
     meta: ["Mango", "Lamponi", "Meringa"],
     img: cdn(torFrutti.url),
-    duration: "3:42",
-    bpm: "128 BPM",
     accent: "from-amber-300 via-rose-400 to-fuchsia-500",
   },
   {
@@ -37,8 +35,6 @@ const capolavori = [
     note: "Panna azzurro cielo, fragole fresche, cioccolato bianco e fondente, scritta a mano libera.",
     meta: ["Panna", "Fragole", "Cioccolato"],
     img: cdn(torPe.url),
-    duration: "4:12",
-    bpm: "96 BPM",
     accent: "from-sky-300 via-cyan-400 to-blue-500",
   },
   {
@@ -48,8 +44,6 @@ const capolavori = [
     note: "Torta a cuore con petali di pansé edibili, gocce di coulis e cornice rosa antico.",
     meta: ["Cuore", "Pansé", "Rosa"],
     img: cdn(torMamma.url),
-    duration: "2:58",
-    bpm: "72 BPM",
     accent: "from-rose-300 via-pink-400 to-red-500",
   },
   {
@@ -59,8 +53,6 @@ const capolavori = [
     note: "Ghirlanda di frutta fresca su base allo yogurt: anguria, pesche, mirtilli e crumble.",
     meta: ["Anguria", "Pesca", "Crumble"],
     img: cdn(torFrutta.url),
-    duration: "5:04",
-    bpm: "112 BPM",
     accent: "from-lime-300 via-emerald-400 to-teal-500",
   },
   {
@@ -70,8 +62,6 @@ const capolavori = [
     note: "Nuvole di crema alla fragola, colata di frutti rossi al centro, perle di cioccolato bianco.",
     meta: ["Fragole", "Cioccolato bianco", "Menta"],
     img: cdn(torFragole.url),
-    duration: "3:21",
-    bpm: "104 BPM",
     accent: "from-pink-300 via-rose-500 to-red-600",
   },
   {
@@ -81,8 +71,6 @@ const capolavori = [
     note: "Torta a tema Minnie con arcobaleno di zucchero, cuori pastello e palloncini in cioccolato.",
     meta: ["Fragole", "Arcobaleno", "Palloncini"],
     img: cdn(torMinnie.url),
-    duration: "3:33",
-    bpm: "140 BPM",
     accent: "from-fuchsia-300 via-pink-400 to-rose-500",
   },
   {
@@ -92,8 +80,6 @@ const capolavori = [
     note: "Pennellate di panna colorata: giallo limone, azzurro cobalto, verde acqua e rosso ciliegia.",
     meta: ["Vaniglia", "Colori", "Pop"],
     img: cdn(torPopArt.url),
-    duration: "2:47",
-    bpm: "150 BPM",
     accent: "from-yellow-300 via-cyan-400 to-red-500",
   },
   {
@@ -103,8 +89,6 @@ const capolavori = [
     note: "Panna montata a mano, corona di frutti rossi, physalis dorati e viticci di pisello dolce.",
     meta: ["Physalis", "More", "Piselli dolci"],
     img: cdn(torQuaranta.url),
-    duration: "4:40",
-    bpm: "88 BPM",
     accent: "from-neutral-200 via-rose-300 to-amber-400",
   },
   {
@@ -114,8 +98,6 @@ const capolavori = [
     note: "Panna soffice a nuvola, Smarties, wafer croccanti e topper Happy Birthday kawaii.",
     meta: ["Smarties", "Wafer", "Kawaii"],
     img: cdn(torCamilla.url),
-    duration: "3:15",
-    bpm: "132 BPM",
     accent: "from-violet-300 via-fuchsia-400 to-pink-500",
   },
 ];
@@ -293,55 +275,57 @@ function Index() {
         </div>
       </section>
 
-      {/* I Nostri Capolavori — Cake Playlist */}
+      {/* I Nostri Capolavori — Galleria Fotografica */}
       <section id="gusti" className="relative py-20 md:py-28 border-y border-primary/10 overflow-hidden bg-foreground text-background">
         {/* Ambient noise */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay" style={{ backgroundImage: "radial-gradient(circle at 20% 10%, oklch(0.85 0.2 30 / 0.6), transparent 40%), radial-gradient(circle at 80% 90%, oklch(0.75 0.2 320 / 0.5), transparent 45%)" }} aria-hidden="true" />
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-background/40 to-transparent" aria-hidden="true" />
-        <div className="pointer-events-none absolute top-5 left-6 font-mono text-[9px] uppercase tracking-[0.3em] text-background/50" aria-hidden="true">Now Playing · Vol. II</div>
-        <div className="pointer-events-none absolute top-5 right-6 font-mono text-[9px] uppercase tracking-[0.3em] text-background/50" aria-hidden="true">Cadorago · MMXXV</div>
+        <div className="pointer-events-none absolute top-5 left-6 font-mono text-[9px] uppercase tracking-[0.3em] text-background/50" aria-hidden="true">Galleria · 9 scatti</div>
+        <div className="pointer-events-none absolute top-5 right-6 font-mono text-[9px] uppercase tracking-[0.3em] text-background/50" aria-hidden="true">El Sabor · Cadorago</div>
 
         {/* Header */}
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-8 items-center mb-10 md:mb-14">
-            {/* Spinning vinyl */}
+            {/* Decorative frame */}
             <div className="md:col-span-3 flex md:justify-start justify-center">
-              <div className="relative size-32 md:size-40 animate-spin-slow">
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-background/20 via-background/5 to-transparent ring-1 ring-background/20" />
-                <div className="absolute inset-3 rounded-full border border-background/15" />
-                <div className="absolute inset-6 rounded-full border border-background/10" />
-                <div className="absolute inset-10 rounded-full bg-primary" />
-                <div className="absolute inset-[45%] rounded-full bg-background" />
+              <div className="relative size-32 md:size-40">
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/30 via-background/10 to-primary/20 ring-1 ring-background/20 animate-tilt" />
+                <div className="absolute inset-4 rounded-xl border border-background/15" />
+                <div className="absolute inset-8 rounded-lg bg-primary/80 grid place-items-center">
+                  <svg viewBox="0 0 24 24" className="size-10 text-background" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
+                    <rect x="3" y="6" width="18" height="14" rx="2" />
+                    <circle cx="8.5" cy="10.5" r="1.5" fill="currentColor" />
+                    <path d="M21 15l-5-5L9 17l-3-3-4 4" />
+                  </svg>
+                </div>
               </div>
             </div>
             <div className="md:col-span-6 text-center md:text-left">
               <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-3 flex items-center gap-3 justify-center md:justify-start">
                 <span className="inline-block w-6 h-px bg-primary" />
-                La Playlist di Torte
+                La Galleria delle Torte
               </p>
               <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight text-background">
                 I Nostri <span className="italic text-primary">Capolavori.</span>
               </h2>
               <p className="mt-4 text-background/70 text-sm md:text-base leading-relaxed max-w-xl">
-                Nove tracce di zucchero e panna. Scorri, ascolta con gli occhi,
-                <span className="italic font-display text-primary"> scegli la tua traccia preferita.</span>
+                Nove scatti di zucchero e panna. Scorri la galleria,
+                <span className="italic font-display text-primary"> scegli la torta che ti ispira.</span>
               </p>
             </div>
-            {/* Equalizer */}
-            <div className="md:col-span-3 flex md:justify-end justify-center items-end gap-1.5 h-16">
-              {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                <span
-                  key={i}
-                  className="w-2 md:w-2.5 bg-gradient-to-t from-primary to-background rounded-full animate-eq origin-bottom"
-                  style={{ height: `${30 + ((i * 37) % 55)}%`, animationDelay: `${(i * 90) % 700}ms`, animationDuration: `${700 + (i * 60) % 500}ms` }}
-                  aria-hidden="true"
-                />
-              ))}
+            {/* Decorative aperture */}
+            <div className="md:col-span-3 flex md:justify-end justify-center">
+              <div className="relative size-24 md:size-28">
+                <div className="absolute inset-0 rounded-full border-2 border-dashed border-background/20 animate-spin-slow" />
+                <div className="absolute inset-4 rounded-full border border-background/10" />
+                <div className="absolute inset-8 rounded-full bg-primary/20" />
+                <div className="absolute inset-[45%] rounded-full bg-primary" />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Marquee — track names ticker */}
+        {/* Marquee — photo names ticker */}
         <div className="relative overflow-hidden py-3 border-y border-background/10 bg-background/5 mb-10 md:mb-14">
           <div className="flex animate-marquee whitespace-nowrap">
             {[0, 1].map((k) => (
@@ -352,7 +336,7 @@ function Index() {
                       {c.name}
                     </span>
                     <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
-                      {c.duration}
+                      {c.tag}
                     </span>
                     <span className="inline-block size-1.5 rounded-full bg-primary shrink-0" aria-hidden="true" />
                   </span>
@@ -362,7 +346,7 @@ function Index() {
           </div>
         </div>
 
-        {/* Playlist track — horizontal snap scroller */}
+        {/* Photo gallery — horizontal snap scroller */}
         <div className="relative">
           <div
             className="flex gap-5 md:gap-7 overflow-x-auto overflow-y-hidden snap-x pb-8 px-6 md:px-16 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
@@ -374,7 +358,7 @@ function Index() {
                 className="group relative shrink-0 snap-center w-[78vw] sm:w-[62vw] md:w-[420px] lg:w-[460px]"
                 style={{ transform: `rotate(${idx % 2 === 0 ? "-1.2deg" : "1.2deg"})` }}
               >
-                {/* Track # + tag */}
+                {/* Photo # + tag */}
                 <div className="flex items-center justify-between mb-3 px-1">
                   <span className="font-mono font-bold text-4xl md:text-5xl leading-none text-background/25 select-none">
                     {c.n}
@@ -384,12 +368,12 @@ function Index() {
                   </span>
                 </div>
 
-                {/* Vinyl card */}
+                {/* Polaroid card */}
                 <div className="relative rounded-2xl overflow-hidden bg-background/5 ring-1 ring-background/10 shadow-2xl shadow-black/50 transition-transform duration-700 ease-out-expo group-hover:-translate-y-2 group-hover:rotate-0">
                   {/* Gradient glow */}
                   <div className={`pointer-events-none absolute -inset-1 bg-gradient-to-br ${c.accent} opacity-0 blur-2xl group-hover:opacity-40 transition-opacity duration-700`} aria-hidden="true" />
 
-                  {/* Album art */}
+                  {/* Photo */}
                   <div className="relative aspect-square overflow-hidden">
                     <img
                       src={c.img}
@@ -404,31 +388,15 @@ function Index() {
                     {/* Bottom fade */}
                     <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/30 to-transparent" aria-hidden="true" />
 
-                    {/* Play button */}
-                    <button
-                      type="button"
-                      aria-label={`Ascolta ${c.name}`}
-                      className="absolute top-4 right-4 size-11 rounded-full bg-background/95 text-foreground grid place-items-center shadow-xl scale-90 opacity-80 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 ease-out-expo hover:bg-primary hover:text-primary-foreground"
-                    >
-                      <svg viewBox="0 0 24 24" className="size-4 fill-current" aria-hidden="true">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </button>
-
                     {/* Overlay caption */}
                     <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-                      <h3 className="font-display italic text-2xl md:text-3xl leading-tight text-background mb-1.5">
+                      <h3 className="font-display italic text-2xl md:text-3xl leading-tight text-background">
                         {c.name}
                       </h3>
-                      <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-background/70">
-                        <span>{c.duration}</span>
-                        <span className="inline-block size-1 rounded-full bg-primary" aria-hidden="true" />
-                        <span>{c.bpm}</span>
-                      </div>
                     </div>
                   </div>
 
-                  {/* Track meta */}
+                  {/* Photo meta */}
                   <div className="p-5 md:p-6 bg-background/[0.04]">
                     <p className="text-[13px] md:text-sm leading-relaxed text-background/80 mb-4">
                       {c.note}
@@ -455,7 +423,7 @@ function Index() {
           {/* Scroll hint */}
           <div className="mt-2 flex items-center justify-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-background/50">
             <span className="inline-block w-8 h-px bg-background/30" />
-            Scorri la playlist
+            Scorri la galleria
             <span className="inline-block w-8 h-px bg-background/30" />
           </div>
         </div>
@@ -469,7 +437,7 @@ function Index() {
             href="#visit"
             className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-primary hover:text-background transition-colors"
           >
-            Ordina la tua traccia
+            Ordina la tua torta
             <span className="inline-block w-6 h-px bg-primary group-hover:w-10 transition-all" />
           </a>
         </div>
