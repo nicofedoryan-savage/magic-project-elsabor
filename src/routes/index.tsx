@@ -295,106 +295,184 @@ function Index() {
         </div>
       </section>
 
-      {/* I Nostri Capolavori — Editorial gallery */}
-      <section id="gusti" className="relative py-16 md:py-20 px-6 border-y border-primary/10 overflow-hidden bg-background">
-        <div className="pointer-events-none absolute inset-4 border border-foreground/10 rounded-sm" aria-hidden="true" />
-        <div className="pointer-events-none absolute top-5 left-6 font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/40" aria-hidden="true">N° 08 — Vol. I</div>
-        <div className="pointer-events-none absolute top-5 right-6 font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/40" aria-hidden="true">Cadorago · MMXXV</div>
+      {/* I Nostri Capolavori — Cake Playlist */}
+      <section id="gusti" className="relative py-20 md:py-28 border-y border-primary/10 overflow-hidden bg-foreground text-background">
+        {/* Ambient noise */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay" style={{ backgroundImage: "radial-gradient(circle at 20% 10%, oklch(0.85 0.2 30 / 0.6), transparent 40%), radial-gradient(circle at 80% 90%, oklch(0.75 0.2 320 / 0.5), transparent 45%)" }} aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-background/40 to-transparent" aria-hidden="true" />
+        <div className="pointer-events-none absolute top-5 left-6 font-mono text-[9px] uppercase tracking-[0.3em] text-background/50" aria-hidden="true">Now Playing · Vol. II</div>
+        <div className="pointer-events-none absolute top-5 right-6 font-mono text-[9px] uppercase tracking-[0.3em] text-background/50" aria-hidden="true">Cadorago · MMXXV</div>
 
-        <div className="relative max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="grid md:grid-cols-12 gap-6 items-end mb-10 md:mb-12">
-            <div className="md:col-span-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-3 flex items-center gap-3">
+        {/* Header */}
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-12 gap-8 items-center mb-10 md:mb-14">
+            {/* Spinning vinyl */}
+            <div className="md:col-span-3 flex md:justify-start justify-center">
+              <div className="relative size-32 md:size-40 animate-spin-slow">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-background/20 via-background/5 to-transparent ring-1 ring-background/20" />
+                <div className="absolute inset-3 rounded-full border border-background/15" />
+                <div className="absolute inset-6 rounded-full border border-background/10" />
+                <div className="absolute inset-10 rounded-full bg-primary" />
+                <div className="absolute inset-[45%] rounded-full bg-background" />
+              </div>
+            </div>
+            <div className="md:col-span-6 text-center md:text-left">
+              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-3 flex items-center gap-3 justify-center md:justify-start">
                 <span className="inline-block w-6 h-px bg-primary" />
-                Il Ricettario
+                La Playlist di Torte
               </p>
-              <h2 className="font-display text-3xl md:text-5xl leading-[0.95] tracking-tight">
+              <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight text-background">
                 I Nostri <span className="italic text-primary">Capolavori.</span>
               </h2>
-            </div>
-            <div className="md:col-span-4">
-              <p className="text-foreground/70 text-sm leading-relaxed max-w-sm">
-                Otto piccoli rituali di golosità, mantecati e impiattati ogni mattina.
-                <span className="italic font-display text-primary"> Un invito a fermarsi.</span>
+              <p className="mt-4 text-background/70 text-sm md:text-base leading-relaxed max-w-xl">
+                Nove tracce di zucchero e panna. Scorri, ascolta con gli occhi,
+                <span className="italic font-display text-primary"> scegli la tua traccia preferita.</span>
               </p>
             </div>
+            {/* Equalizer */}
+            <div className="md:col-span-3 flex md:justify-end justify-center items-end gap-1.5 h-16">
+              {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                <span
+                  key={i}
+                  className="w-2 md:w-2.5 bg-gradient-to-t from-primary to-background rounded-full animate-eq origin-bottom"
+                  style={{ height: `${30 + ((i * 37) % 55)}%`, animationDelay: `${(i * 90) % 700}ms`, animationDuration: `${700 + (i * 60) % 500}ms` }}
+                  aria-hidden="true"
+                />
+              ))}
+            </div>
           </div>
+        </div>
 
-          {/* Editorial feed — big image + overlapping caption card, alternating */}
-          <div className="space-y-28 md:space-y-32 pb-20">
-            {capolavori.map((c, idx) => {
-              const left = idx % 2 === 0;
-              return (
-                <article key={c.n} className="group relative max-w-2xl mx-auto md:mx-0" style={{ marginLeft: left ? undefined : "auto" }}>
-                  {/* Number + tag row */}
-                  <div className={`flex items-baseline mb-4 md:mb-6 ${left ? "" : "flex-row-reverse"}`}>
-                    <span className="font-mono font-bold text-5xl md:text-6xl leading-none text-foreground/[0.06] select-none flex-1">
-                      {c.n}
+        {/* Marquee — track names ticker */}
+        <div className="relative overflow-hidden py-3 border-y border-background/10 bg-background/5 mb-10 md:mb-14">
+          <div className="flex animate-marquee whitespace-nowrap">
+            {[0, 1].map((k) => (
+              <div key={k} className="flex gap-8 items-center px-4 shrink-0">
+                {capolavori.map((c, i) => (
+                  <span key={`${k}-${i}`} className="flex items-center gap-8 shrink-0">
+                    <span className="font-display italic text-2xl md:text-3xl text-background/90">
+                      {c.name}
                     </span>
-                    <span className="font-mono text-[9px] px-2 py-1 border border-primary/40 text-primary uppercase tracking-[0.25em]">
-                      {c.tag}
+                    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+                      {c.duration}
                     </span>
-                  </div>
+                    <span className="inline-block size-1.5 rounded-full bg-primary shrink-0" aria-hidden="true" />
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
 
-                  {/* Image + overlapping caption */}
-                  <div className={`relative ${left ? "ml-2 md:ml-4" : "mr-2 md:mr-4"}`}>
-                    <div className="aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-foreground/20 bg-card">
-                      <img
-                        src={c.img}
-                        alt={c.name}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out-expo group-hover:scale-[1.04]"
-                      />
+        {/* Playlist track — horizontal snap scroller */}
+        <div className="relative">
+          <div
+            className="flex gap-5 md:gap-7 overflow-x-auto snap-x snap-mandatory pb-8 px-6 md:px-16 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {capolavori.map((c, idx) => (
+              <article
+                key={c.n}
+                className="group relative shrink-0 snap-center w-[78vw] sm:w-[62vw] md:w-[420px] lg:w-[460px]"
+                style={{ transform: `rotate(${idx % 2 === 0 ? "-1.2deg" : "1.2deg"})` }}
+              >
+                {/* Track # + tag */}
+                <div className="flex items-center justify-between mb-3 px-1">
+                  <span className="font-mono font-bold text-4xl md:text-5xl leading-none text-background/25 select-none">
+                    {c.n}
+                  </span>
+                  <span className="font-mono text-[9px] px-2 py-1 border border-primary/60 text-primary uppercase tracking-[0.25em] bg-background/5 backdrop-blur-sm">
+                    {c.tag}
+                  </span>
+                </div>
+
+                {/* Vinyl card */}
+                <div className="relative rounded-2xl overflow-hidden bg-background/5 ring-1 ring-background/10 shadow-2xl shadow-black/50 transition-transform duration-700 ease-out-expo group-hover:-translate-y-2 group-hover:rotate-0">
+                  {/* Gradient glow */}
+                  <div className={`pointer-events-none absolute -inset-1 bg-gradient-to-br ${c.accent} opacity-0 blur-2xl group-hover:opacity-40 transition-opacity duration-700`} aria-hidden="true" />
+
+                  {/* Album art */}
+                  <div className="relative aspect-square overflow-hidden">
+                    <img
+                      src={c.img}
+                      alt={c.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out-expo group-hover:scale-110"
+                    />
+                    {/* Shine sweep on hover */}
+                    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                      <div className="absolute top-0 -left-1/2 h-full w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shine" />
                     </div>
+                    {/* Bottom fade */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/30 to-transparent" aria-hidden="true" />
 
-                    <div
-                      className={`
-                        absolute -bottom-14 md:-bottom-16
-                        ${left ? "-left-2 md:-left-4 right-6 md:right-10 text-left" : "-right-2 md:-right-4 left-6 md:left-10 text-right"}
-                        bg-background p-5 md:p-6 shadow-lg shadow-foreground/5 ring-1 ring-foreground/5
-                        transition-transform duration-500 ease-out-expo group-hover:-translate-y-1
-                      `}
+                    {/* Play button */}
+                    <button
+                      type="button"
+                      aria-label={`Ascolta ${c.name}`}
+                      className="absolute top-4 right-4 size-11 rounded-full bg-background/95 text-foreground grid place-items-center shadow-xl scale-90 opacity-80 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 ease-out-expo hover:bg-primary hover:text-primary-foreground"
                     >
-                      <h3 className="font-display italic text-2xl md:text-3xl leading-tight mb-2 md:mb-3 text-foreground">
+                      <svg viewBox="0 0 24 24" className="size-4 fill-current" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+
+                    {/* Overlay caption */}
+                    <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                      <h3 className="font-display italic text-2xl md:text-3xl leading-tight text-background mb-1.5">
                         {c.name}
                       </h3>
-                      <p className="text-xs md:text-sm leading-relaxed text-foreground/75 mb-4">
-                        {c.note}
-                      </p>
-                      <div className={`flex flex-wrap gap-x-5 gap-y-2 border-t border-foreground/10 pt-3 md:pt-4 ${left ? "" : "justify-end"}`}>
-                        {c.meta.map((m, i) => (
-                          <div key={m}>
-                            <span className="font-mono text-[8px] uppercase text-primary block mb-0.5 tracking-[0.2em]">
-                              {["Base", "Essenza", "Nota"][i] ?? "Detail"}
-                            </span>
-                            <span className="text-[11px] md:text-xs font-semibold text-foreground">
-                              {m}
-                            </span>
-                          </div>
-                        ))}
+                      <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-background/70">
+                        <span>{c.duration}</span>
+                        <span className="inline-block size-1 rounded-full bg-primary" aria-hidden="true" />
+                        <span>{c.bpm}</span>
                       </div>
                     </div>
                   </div>
-                </article>
-              );
-            })}
+
+                  {/* Track meta */}
+                  <div className="p-5 md:p-6 bg-background/[0.04]">
+                    <p className="text-[13px] md:text-sm leading-relaxed text-background/80 mb-4">
+                      {c.note}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {c.meta.map((m) => (
+                        <span
+                          key={m}
+                          className="font-mono text-[10px] uppercase tracking-[0.2em] px-2.5 py-1 rounded-full border border-background/15 text-background/70 hover:border-primary hover:text-primary transition-colors"
+                        >
+                          {m}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+
+            {/* Trailing spacer */}
+            <div className="shrink-0 w-6 md:w-16" aria-hidden="true" />
           </div>
 
-
-          {/* Footer note */}
-          <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 pt-5 border-t border-foreground/10">
-            <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/50">
-              Menu stagionale · Ingredienti locali
-            </p>
-            <a
-              href="#visit"
-              className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-primary hover:text-foreground transition-colors"
-            >
-              Assaggia in laboratorio
-              <span className="inline-block w-6 h-px bg-primary group-hover:w-10 transition-all" />
-            </a>
+          {/* Scroll hint */}
+          <div className="mt-2 flex items-center justify-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-background/50">
+            <span className="inline-block w-8 h-px bg-background/30" />
+            Scorri la playlist
+            <span className="inline-block w-8 h-px bg-background/30" />
           </div>
+        </div>
+
+        {/* Footer note */}
+        <div className="max-w-7xl mx-auto px-6 mt-10 md:mt-14 flex flex-col md:flex-row items-center justify-between gap-4 pt-5 border-t border-background/10">
+          <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-background/50">
+            Torte su misura · Occasioni speciali
+          </p>
+          <a
+            href="#visit"
+            className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-primary hover:text-background transition-colors"
+          >
+            Ordina la tua traccia
+            <span className="inline-block w-6 h-px bg-primary group-hover:w-10 transition-all" />
+          </a>
         </div>
       </section>
 
