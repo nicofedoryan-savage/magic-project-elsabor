@@ -365,7 +365,8 @@ function Index() {
         {/* Playlist track — horizontal snap scroller */}
         <div className="relative">
           <div
-            className="flex gap-5 md:gap-7 overflow-x-auto snap-x snap-mandatory pb-8 px-6 md:px-16 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            className="flex gap-5 md:gap-7 overflow-x-auto overflow-y-hidden snap-x pb-8 px-6 md:px-16 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+            style={{ touchAction: "pan-x", WebkitOverflowScrolling: "touch", overscrollBehaviorX: "contain" }}
           >
             {capolavori.map((c, idx) => (
               <article
