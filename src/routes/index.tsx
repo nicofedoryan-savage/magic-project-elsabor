@@ -15,10 +15,8 @@ import torPopArt from "@/assets/torte/pop-art.webp.asset.json";
 import torQuaranta from "@/assets/torte/quaranta-anni.webp.asset.json";
 import torCamilla from "@/assets/torte/camilla-kitty.webp.asset.json";
 
-// Le asset .asset.json sono servite dal CDN Lovable a /__l5e/...
-// Su hosting esterni (es. Vercel) quel path non esiste: prefissiamo il dominio pubblico.
-const CDN_BASE = "https://yogurt-magic-motion.lovable.app";
-const cdn = (u: string) => (/^https?:/.test(u) ? u : `${CDN_BASE}${u}`);
+// Le asset .asset.json sono servite dal CDN Lovable a /__l5e/... del progetto corrente.
+const cdn = (u: string) => u;
 
 const capolavori = [
   {
