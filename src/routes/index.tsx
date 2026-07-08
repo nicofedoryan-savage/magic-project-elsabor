@@ -26,8 +26,6 @@ const capolavori = [
     note: "Cheesecake al mango con coulis di frutti rossi, meringhe frantumate e bosco di more.",
     meta: ["Mango", "Lamponi", "Meringa"],
     img: cdn(torFrutti.url),
-    duration: "3:42",
-    bpm: "128 BPM",
     accent: "from-amber-300 via-rose-400 to-fuchsia-500",
   },
   {
@@ -37,8 +35,6 @@ const capolavori = [
     note: "Panna azzurro cielo, fragole fresche, cioccolato bianco e fondente, scritta a mano libera.",
     meta: ["Panna", "Fragole", "Cioccolato"],
     img: cdn(torPe.url),
-    duration: "4:12",
-    bpm: "96 BPM",
     accent: "from-sky-300 via-cyan-400 to-blue-500",
   },
   {
@@ -48,8 +44,6 @@ const capolavori = [
     note: "Torta a cuore con petali di pansé edibili, gocce di coulis e cornice rosa antico.",
     meta: ["Cuore", "Pansé", "Rosa"],
     img: cdn(torMamma.url),
-    duration: "2:58",
-    bpm: "72 BPM",
     accent: "from-rose-300 via-pink-400 to-red-500",
   },
   {
@@ -59,8 +53,6 @@ const capolavori = [
     note: "Ghirlanda di frutta fresca su base allo yogurt: anguria, pesche, mirtilli e crumble.",
     meta: ["Anguria", "Pesca", "Crumble"],
     img: cdn(torFrutta.url),
-    duration: "5:04",
-    bpm: "112 BPM",
     accent: "from-lime-300 via-emerald-400 to-teal-500",
   },
   {
@@ -70,8 +62,6 @@ const capolavori = [
     note: "Nuvole di crema alla fragola, colata di frutti rossi al centro, perle di cioccolato bianco.",
     meta: ["Fragole", "Cioccolato bianco", "Menta"],
     img: cdn(torFragole.url),
-    duration: "3:21",
-    bpm: "104 BPM",
     accent: "from-pink-300 via-rose-500 to-red-600",
   },
   {
@@ -81,8 +71,6 @@ const capolavori = [
     note: "Torta a tema Minnie con arcobaleno di zucchero, cuori pastello e palloncini in cioccolato.",
     meta: ["Fragole", "Arcobaleno", "Palloncini"],
     img: cdn(torMinnie.url),
-    duration: "3:33",
-    bpm: "140 BPM",
     accent: "from-fuchsia-300 via-pink-400 to-rose-500",
   },
   {
@@ -92,8 +80,6 @@ const capolavori = [
     note: "Pennellate di panna colorata: giallo limone, azzurro cobalto, verde acqua e rosso ciliegia.",
     meta: ["Vaniglia", "Colori", "Pop"],
     img: cdn(torPopArt.url),
-    duration: "2:47",
-    bpm: "150 BPM",
     accent: "from-yellow-300 via-cyan-400 to-red-500",
   },
   {
@@ -103,8 +89,6 @@ const capolavori = [
     note: "Panna montata a mano, corona di frutti rossi, physalis dorati e viticci di pisello dolce.",
     meta: ["Physalis", "More", "Piselli dolci"],
     img: cdn(torQuaranta.url),
-    duration: "4:40",
-    bpm: "88 BPM",
     accent: "from-neutral-200 via-rose-300 to-amber-400",
   },
   {
@@ -114,8 +98,6 @@ const capolavori = [
     note: "Panna soffice a nuvola, Smarties, wafer croccanti e topper Happy Birthday kawaii.",
     meta: ["Smarties", "Wafer", "Kawaii"],
     img: cdn(torCamilla.url),
-    duration: "3:15",
-    bpm: "132 BPM",
     accent: "from-violet-300 via-fuchsia-400 to-pink-500",
   },
 ];
