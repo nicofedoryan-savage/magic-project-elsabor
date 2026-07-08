@@ -5,14 +5,15 @@ import flavorMango from "@/assets/flavor-mango.jpg";
 import shopInterior from "@/assets/coppette-frutti-cadorago.jpg.asset.json";
 import chefPortrait from "@/assets/chef-portrait.jpg";
 import logo from "@/assets/el-sabor-logo.jpg";
-import capPancakeNutella from "@/assets/capolavori/pancake-nutella.jpg.asset.json";
-import capPancakeBerries from "@/assets/capolavori/pancake-berries.jpg.asset.json";
-import capPancakeFichi from "@/assets/capolavori/pancake-fichi.jpg.asset.json";
-import capWaffleAutunno from "@/assets/capolavori/waffle-autunno.jpg.asset.json";
-import capCuoreNocciola from "@/assets/capolavori/cuore-nocciola.jpg.asset.json";
-import capCoulis from "@/assets/capolavori/coulis-frutti.jpg.asset.json";
-import capTartelletta from "@/assets/capolavori/tartelletta-pistacchio.jpg.asset.json";
-import capCoppa from "@/assets/capolavori/coppa-cioccolato.jpg.asset.json";
+import torFrutti from "@/assets/torte/frutti-tropicali.jpg.asset.json";
+import torPe from "@/assets/torte/tanti-auguri-pe.webp.asset.json";
+import torMamma from "@/assets/torte/cuore-mamma.webp.asset.json";
+import torFrutta from "@/assets/torte/tanti-auguri-frutta.jpg.asset.json";
+import torFragole from "@/assets/torte/fragole-passion.webp.asset.json";
+import torMinnie from "@/assets/torte/minnie-nicole.webp.asset.json";
+import torPopArt from "@/assets/torte/pop-art.webp.asset.json";
+import torQuaranta from "@/assets/torte/quaranta-anni.webp.asset.json";
+import torCamilla from "@/assets/torte/camilla-kitty.webp.asset.json";
 
 // Le asset .asset.json sono servite dal CDN Lovable a /__l5e/...
 // Su hosting esterni (es. Vercel) quel path non esiste: prefissiamo il dominio pubblico.
@@ -22,83 +23,102 @@ const cdn = (u: string) => (/^https?:/.test(u) ? u : `${CDN_BASE}${u}`);
 const capolavori = [
   {
     n: "01",
-    name: "Pancake al Bacio",
+    name: "Tropical Sunrise",
     tag: "Signature",
-    note: "Soffici, colati di crema alla nocciola, granella tostata e menta viva.",
-    meta: ["Nocciola", "Cacao", "Menta"],
-    img: cdn(capPancakeNutella.url),
-    span: "md:col-span-6",
-    ratio: "aspect-[4/3]",
+    note: "Cheesecake al mango con coulis di frutti rossi, meringhe frantumate e bosco di more.",
+    meta: ["Mango", "Lamponi", "Meringa"],
+    img: cdn(torFrutti.url),
+    duration: "3:42",
+    bpm: "128 BPM",
+    accent: "from-amber-300 via-rose-400 to-fuchsia-500",
   },
   {
     n: "02",
-    name: "Frutti di Bosco",
-    tag: "Stagionale",
-    note: "Coulis rosso vivo, ribes, mirtilli e more su pancake tiepido.",
-    meta: ["Ribes", "Coulis", "Zucchero a velo"],
-    img: cdn(capPancakeBerries.url),
-    span: "md:col-span-3",
-    ratio: "aspect-[3/4]",
+    name: "Tanti Auguri Pe'",
+    tag: "Compleanno",
+    note: "Panna azzurro cielo, fragole fresche, cioccolato bianco e fondente, scritta a mano libera.",
+    meta: ["Panna", "Fragole", "Cioccolato"],
+    img: cdn(torPe.url),
+    duration: "4:12",
+    bpm: "96 BPM",
+    accent: "from-sky-300 via-cyan-400 to-blue-500",
   },
   {
     n: "03",
-    name: "Fichi & Miele",
-    tag: "Autunno",
-    note: "Fichi caramellati al miele di acacia, granella di mandorle e ricotta.",
-    meta: ["Fichi", "Miele", "Mandorle"],
-    img: cdn(capPancakeFichi.url),
-    span: "md:col-span-3",
-    ratio: "aspect-[3/4]",
+    name: "Cuore di Mamma",
+    tag: "Festa Mamma",
+    note: "Torta a cuore con petali di pansé edibili, gocce di coulis e cornice rosa antico.",
+    meta: ["Cuore", "Pansé", "Rosa"],
+    img: cdn(torMamma.url),
+    duration: "2:58",
+    bpm: "72 BPM",
+    accent: "from-rose-300 via-pink-400 to-red-500",
   },
   {
     n: "04",
-    name: "Coppa Cioccolato",
-    tag: "Da sempre",
-    note: "Panna montata a mano e cioccolato fondente colato al momento.",
-    meta: ["Panna fresca", "Fondente 70%"],
-    img: cdn(capCoppa.url),
-    span: "md:col-span-4",
-    ratio: "aspect-[4/5]",
+    name: "Frutteto d'Estate",
+    tag: "Stagionale",
+    note: "Ghirlanda di frutta fresca su base allo yogurt: anguria, pesche, mirtilli e crumble.",
+    meta: ["Anguria", "Pesca", "Crumble"],
+    img: cdn(torFrutta.url),
+    duration: "5:04",
+    bpm: "112 BPM",
+    accent: "from-lime-300 via-emerald-400 to-teal-500",
   },
   {
     n: "05",
-    name: "Tartelletta di Bronte",
-    tag: "Firma",
-    note: "Guscio di frolla, crema al pistacchio DOP, granella verde smeraldo.",
-    meta: ["Bronte DOP", "Frolla", "Ricotta"],
-    img: cdn(capTartelletta.url),
-    span: "md:col-span-4",
-    ratio: "aspect-[4/5]",
+    name: "Fragole & Passione",
+    tag: "Editor's Pick",
+    note: "Nuvole di crema alla fragola, colata di frutti rossi al centro, perle di cioccolato bianco.",
+    meta: ["Fragole", "Cioccolato bianco", "Menta"],
+    img: cdn(torFragole.url),
+    duration: "3:21",
+    bpm: "104 BPM",
+    accent: "from-pink-300 via-rose-500 to-red-600",
   },
   {
     n: "06",
-    name: "Cuore Morbido",
-    tag: "Merenda",
-    note: "Torta soffice tiepida con cuore fondente di crema alla nocciola.",
-    meta: ["Pan di Spagna", "Nocciola"],
-    img: cdn(capCuoreNocciola.url),
-    span: "md:col-span-4",
-    ratio: "aspect-[4/5]",
+    name: "Nicole in Balloon Land",
+    tag: "Kids",
+    note: "Torta a tema Minnie con arcobaleno di zucchero, cuori pastello e palloncini in cioccolato.",
+    meta: ["Fragole", "Arcobaleno", "Palloncini"],
+    img: cdn(torMinnie.url),
+    duration: "3:33",
+    bpm: "140 BPM",
+    accent: "from-fuchsia-300 via-pink-400 to-rose-500",
   },
   {
     n: "07",
-    name: "Waffle d'Autunno",
-    tag: "Croccante",
-    note: "Waffle belga dorato, foglie d'oro d'acero e neve di zucchero a velo.",
-    meta: ["Waffle", "Acero", "Cannella"],
-    img: cdn(capWaffleAutunno.url),
-    span: "md:col-span-7",
-    ratio: "aspect-[16/9]",
+    name: "Pop Art Frosting",
+    tag: "Bold",
+    note: "Pennellate di panna colorata: giallo limone, azzurro cobalto, verde acqua e rosso ciliegia.",
+    meta: ["Vaniglia", "Colori", "Pop"],
+    img: cdn(torPopArt.url),
+    duration: "2:47",
+    bpm: "150 BPM",
+    accent: "from-yellow-300 via-cyan-400 to-red-500",
   },
   {
     n: "08",
-    name: "Coulis di Frutti Rossi",
-    tag: "Topping",
-    note: "Salsa a caldo di lamponi e more, servita in vasetto al momento.",
-    meta: ["Lamponi", "More", "Vaniglia"],
-    img: cdn(capCoulis.url),
-    span: "md:col-span-5",
-    ratio: "aspect-[16/9]",
+    name: "Quaranta di Fiaba",
+    tag: "Milestone",
+    note: "Panna montata a mano, corona di frutti rossi, physalis dorati e viticci di pisello dolce.",
+    meta: ["Physalis", "More", "Piselli dolci"],
+    img: cdn(torQuaranta.url),
+    duration: "4:40",
+    bpm: "88 BPM",
+    accent: "from-neutral-200 via-rose-300 to-amber-400",
+  },
+  {
+    n: "09",
+    name: "Camilla Kitty Party",
+    tag: "Kids",
+    note: "Panna soffice a nuvola, Smarties, wafer croccanti e topper Happy Birthday kawaii.",
+    meta: ["Smarties", "Wafer", "Kawaii"],
+    img: cdn(torCamilla.url),
+    duration: "3:15",
+    bpm: "132 BPM",
+    accent: "from-violet-300 via-fuchsia-400 to-pink-500",
   },
 ];
 
