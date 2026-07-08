@@ -114,6 +114,18 @@
   0%, 100% { opacity: 0.5; transform: scale(1); }
   50% { opacity: 0.9; transform: scale(1.08); }
 }
+@keyframes shine-sweep {
+  0% { transform: translateX(-120%) skewX(-18deg); }
+  100% { transform: translateX(240%) skewX(-18deg); }
+}
+@keyframes tilt-breathe {
+  0%, 100% { transform: rotate(-2deg) translateY(0); }
+  50% { transform: rotate(2deg) translateY(-6px); }
+}
+@keyframes eq-bar {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
 
 
 @utility animate-float {
@@ -139,6 +151,15 @@
 }
 @utility animate-glow {
   animation: glow-pulse 4s ease-in-out infinite;
+}
+@utility animate-shine {
+  animation: shine-sweep 1.6s var(--ease-out-expo);
+}
+@utility animate-tilt {
+  animation: tilt-breathe 7s ease-in-out infinite;
+}
+@utility animate-eq {
+  animation: eq-bar 900ms ease-in-out infinite;
 }
 
 

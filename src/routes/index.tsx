@@ -5,14 +5,15 @@ import flavorMango from "@/assets/flavor-mango.jpg";
 import shopInterior from "@/assets/coppette-frutti-cadorago.jpg.asset.json";
 import chefPortrait from "@/assets/chef-portrait.jpg";
 import logo from "@/assets/el-sabor-logo.jpg";
-import capPancakeNutella from "@/assets/capolavori/pancake-nutella.jpg.asset.json";
-import capPancakeBerries from "@/assets/capolavori/pancake-berries.jpg.asset.json";
-import capPancakeFichi from "@/assets/capolavori/pancake-fichi.jpg.asset.json";
-import capWaffleAutunno from "@/assets/capolavori/waffle-autunno.jpg.asset.json";
-import capCuoreNocciola from "@/assets/capolavori/cuore-nocciola.jpg.asset.json";
-import capCoulis from "@/assets/capolavori/coulis-frutti.jpg.asset.json";
-import capTartelletta from "@/assets/capolavori/tartelletta-pistacchio.jpg.asset.json";
-import capCoppa from "@/assets/capolavori/coppa-cioccolato.jpg.asset.json";
+import torFrutti from "@/assets/torte/frutti-tropicali.jpg.asset.json";
+import torPe from "@/assets/torte/tanti-auguri-pe.webp.asset.json";
+import torMamma from "@/assets/torte/cuore-mamma.webp.asset.json";
+import torFrutta from "@/assets/torte/tanti-auguri-frutta.jpg.asset.json";
+import torFragole from "@/assets/torte/fragole-passion.webp.asset.json";
+import torMinnie from "@/assets/torte/minnie-nicole.webp.asset.json";
+import torPopArt from "@/assets/torte/pop-art.webp.asset.json";
+import torQuaranta from "@/assets/torte/quaranta-anni.webp.asset.json";
+import torCamilla from "@/assets/torte/camilla-kitty.webp.asset.json";
 
 // Le asset .asset.json sono servite dal CDN Lovable a /__l5e/...
 // Su hosting esterni (es. Vercel) quel path non esiste: prefissiamo il dominio pubblico.
@@ -22,83 +23,102 @@ const cdn = (u: string) => (/^https?:/.test(u) ? u : `${CDN_BASE}${u}`);
 const capolavori = [
   {
     n: "01",
-    name: "Pancake al Bacio",
+    name: "Tropical Sunrise",
     tag: "Signature",
-    note: "Soffici, colati di crema alla nocciola, granella tostata e menta viva.",
-    meta: ["Nocciola", "Cacao", "Menta"],
-    img: cdn(capPancakeNutella.url),
-    span: "md:col-span-6",
-    ratio: "aspect-[4/3]",
+    note: "Cheesecake al mango con coulis di frutti rossi, meringhe frantumate e bosco di more.",
+    meta: ["Mango", "Lamponi", "Meringa"],
+    img: cdn(torFrutti.url),
+    duration: "3:42",
+    bpm: "128 BPM",
+    accent: "from-amber-300 via-rose-400 to-fuchsia-500",
   },
   {
     n: "02",
-    name: "Frutti di Bosco",
-    tag: "Stagionale",
-    note: "Coulis rosso vivo, ribes, mirtilli e more su pancake tiepido.",
-    meta: ["Ribes", "Coulis", "Zucchero a velo"],
-    img: cdn(capPancakeBerries.url),
-    span: "md:col-span-3",
-    ratio: "aspect-[3/4]",
+    name: "Tanti Auguri Pe'",
+    tag: "Compleanno",
+    note: "Panna azzurro cielo, fragole fresche, cioccolato bianco e fondente, scritta a mano libera.",
+    meta: ["Panna", "Fragole", "Cioccolato"],
+    img: cdn(torPe.url),
+    duration: "4:12",
+    bpm: "96 BPM",
+    accent: "from-sky-300 via-cyan-400 to-blue-500",
   },
   {
     n: "03",
-    name: "Fichi & Miele",
-    tag: "Autunno",
-    note: "Fichi caramellati al miele di acacia, granella di mandorle e ricotta.",
-    meta: ["Fichi", "Miele", "Mandorle"],
-    img: cdn(capPancakeFichi.url),
-    span: "md:col-span-3",
-    ratio: "aspect-[3/4]",
+    name: "Cuore di Mamma",
+    tag: "Festa Mamma",
+    note: "Torta a cuore con petali di pansé edibili, gocce di coulis e cornice rosa antico.",
+    meta: ["Cuore", "Pansé", "Rosa"],
+    img: cdn(torMamma.url),
+    duration: "2:58",
+    bpm: "72 BPM",
+    accent: "from-rose-300 via-pink-400 to-red-500",
   },
   {
     n: "04",
-    name: "Coppa Cioccolato",
-    tag: "Da sempre",
-    note: "Panna montata a mano e cioccolato fondente colato al momento.",
-    meta: ["Panna fresca", "Fondente 70%"],
-    img: cdn(capCoppa.url),
-    span: "md:col-span-4",
-    ratio: "aspect-[4/5]",
+    name: "Frutteto d'Estate",
+    tag: "Stagionale",
+    note: "Ghirlanda di frutta fresca su base allo yogurt: anguria, pesche, mirtilli e crumble.",
+    meta: ["Anguria", "Pesca", "Crumble"],
+    img: cdn(torFrutta.url),
+    duration: "5:04",
+    bpm: "112 BPM",
+    accent: "from-lime-300 via-emerald-400 to-teal-500",
   },
   {
     n: "05",
-    name: "Tartelletta di Bronte",
-    tag: "Firma",
-    note: "Guscio di frolla, crema al pistacchio DOP, granella verde smeraldo.",
-    meta: ["Bronte DOP", "Frolla", "Ricotta"],
-    img: cdn(capTartelletta.url),
-    span: "md:col-span-4",
-    ratio: "aspect-[4/5]",
+    name: "Fragole & Passione",
+    tag: "Editor's Pick",
+    note: "Nuvole di crema alla fragola, colata di frutti rossi al centro, perle di cioccolato bianco.",
+    meta: ["Fragole", "Cioccolato bianco", "Menta"],
+    img: cdn(torFragole.url),
+    duration: "3:21",
+    bpm: "104 BPM",
+    accent: "from-pink-300 via-rose-500 to-red-600",
   },
   {
     n: "06",
-    name: "Cuore Morbido",
-    tag: "Merenda",
-    note: "Torta soffice tiepida con cuore fondente di crema alla nocciola.",
-    meta: ["Pan di Spagna", "Nocciola"],
-    img: cdn(capCuoreNocciola.url),
-    span: "md:col-span-4",
-    ratio: "aspect-[4/5]",
+    name: "Nicole in Balloon Land",
+    tag: "Kids",
+    note: "Torta a tema Minnie con arcobaleno di zucchero, cuori pastello e palloncini in cioccolato.",
+    meta: ["Fragole", "Arcobaleno", "Palloncini"],
+    img: cdn(torMinnie.url),
+    duration: "3:33",
+    bpm: "140 BPM",
+    accent: "from-fuchsia-300 via-pink-400 to-rose-500",
   },
   {
     n: "07",
-    name: "Waffle d'Autunno",
-    tag: "Croccante",
-    note: "Waffle belga dorato, foglie d'oro d'acero e neve di zucchero a velo.",
-    meta: ["Waffle", "Acero", "Cannella"],
-    img: cdn(capWaffleAutunno.url),
-    span: "md:col-span-7",
-    ratio: "aspect-[16/9]",
+    name: "Pop Art Frosting",
+    tag: "Bold",
+    note: "Pennellate di panna colorata: giallo limone, azzurro cobalto, verde acqua e rosso ciliegia.",
+    meta: ["Vaniglia", "Colori", "Pop"],
+    img: cdn(torPopArt.url),
+    duration: "2:47",
+    bpm: "150 BPM",
+    accent: "from-yellow-300 via-cyan-400 to-red-500",
   },
   {
     n: "08",
-    name: "Coulis di Frutti Rossi",
-    tag: "Topping",
-    note: "Salsa a caldo di lamponi e more, servita in vasetto al momento.",
-    meta: ["Lamponi", "More", "Vaniglia"],
-    img: cdn(capCoulis.url),
-    span: "md:col-span-5",
-    ratio: "aspect-[16/9]",
+    name: "Quaranta di Fiaba",
+    tag: "Milestone",
+    note: "Panna montata a mano, corona di frutti rossi, physalis dorati e viticci di pisello dolce.",
+    meta: ["Physalis", "More", "Piselli dolci"],
+    img: cdn(torQuaranta.url),
+    duration: "4:40",
+    bpm: "88 BPM",
+    accent: "from-neutral-200 via-rose-300 to-amber-400",
+  },
+  {
+    n: "09",
+    name: "Camilla Kitty Party",
+    tag: "Kids",
+    note: "Panna soffice a nuvola, Smarties, wafer croccanti e topper Happy Birthday kawaii.",
+    meta: ["Smarties", "Wafer", "Kawaii"],
+    img: cdn(torCamilla.url),
+    duration: "3:15",
+    bpm: "132 BPM",
+    accent: "from-violet-300 via-fuchsia-400 to-pink-500",
   },
 ];
 
@@ -275,106 +295,184 @@ function Index() {
         </div>
       </section>
 
-      {/* I Nostri Capolavori — Editorial gallery */}
-      <section id="gusti" className="relative py-16 md:py-20 px-6 border-y border-primary/10 overflow-hidden bg-background">
-        <div className="pointer-events-none absolute inset-4 border border-foreground/10 rounded-sm" aria-hidden="true" />
-        <div className="pointer-events-none absolute top-5 left-6 font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/40" aria-hidden="true">N° 08 — Vol. I</div>
-        <div className="pointer-events-none absolute top-5 right-6 font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/40" aria-hidden="true">Cadorago · MMXXV</div>
+      {/* I Nostri Capolavori — Cake Playlist */}
+      <section id="gusti" className="relative py-20 md:py-28 border-y border-primary/10 overflow-hidden bg-foreground text-background">
+        {/* Ambient noise */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay" style={{ backgroundImage: "radial-gradient(circle at 20% 10%, oklch(0.85 0.2 30 / 0.6), transparent 40%), radial-gradient(circle at 80% 90%, oklch(0.75 0.2 320 / 0.5), transparent 45%)" }} aria-hidden="true" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-background/40 to-transparent" aria-hidden="true" />
+        <div className="pointer-events-none absolute top-5 left-6 font-mono text-[9px] uppercase tracking-[0.3em] text-background/50" aria-hidden="true">Now Playing · Vol. II</div>
+        <div className="pointer-events-none absolute top-5 right-6 font-mono text-[9px] uppercase tracking-[0.3em] text-background/50" aria-hidden="true">Cadorago · MMXXV</div>
 
-        <div className="relative max-w-6xl mx-auto">
-          {/* Header */}
-          <div className="grid md:grid-cols-12 gap-6 items-end mb-10 md:mb-12">
-            <div className="md:col-span-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-3 flex items-center gap-3">
+        {/* Header */}
+        <div className="relative max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-12 gap-8 items-center mb-10 md:mb-14">
+            {/* Spinning vinyl */}
+            <div className="md:col-span-3 flex md:justify-start justify-center">
+              <div className="relative size-32 md:size-40 animate-spin-slow">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-background/20 via-background/5 to-transparent ring-1 ring-background/20" />
+                <div className="absolute inset-3 rounded-full border border-background/15" />
+                <div className="absolute inset-6 rounded-full border border-background/10" />
+                <div className="absolute inset-10 rounded-full bg-primary" />
+                <div className="absolute inset-[45%] rounded-full bg-background" />
+              </div>
+            </div>
+            <div className="md:col-span-6 text-center md:text-left">
+              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-3 flex items-center gap-3 justify-center md:justify-start">
                 <span className="inline-block w-6 h-px bg-primary" />
-                Il Ricettario
+                La Playlist di Torte
               </p>
-              <h2 className="font-display text-3xl md:text-5xl leading-[0.95] tracking-tight">
+              <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight text-background">
                 I Nostri <span className="italic text-primary">Capolavori.</span>
               </h2>
-            </div>
-            <div className="md:col-span-4">
-              <p className="text-foreground/70 text-sm leading-relaxed max-w-sm">
-                Otto piccoli rituali di golosità, mantecati e impiattati ogni mattina.
-                <span className="italic font-display text-primary"> Un invito a fermarsi.</span>
+              <p className="mt-4 text-background/70 text-sm md:text-base leading-relaxed max-w-xl">
+                Nove tracce di zucchero e panna. Scorri, ascolta con gli occhi,
+                <span className="italic font-display text-primary"> scegli la tua traccia preferita.</span>
               </p>
             </div>
+            {/* Equalizer */}
+            <div className="md:col-span-3 flex md:justify-end justify-center items-end gap-1.5 h-16">
+              {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
+                <span
+                  key={i}
+                  className="w-2 md:w-2.5 bg-gradient-to-t from-primary to-background rounded-full animate-eq origin-bottom"
+                  style={{ height: `${30 + ((i * 37) % 55)}%`, animationDelay: `${(i * 90) % 700}ms`, animationDuration: `${700 + (i * 60) % 500}ms` }}
+                  aria-hidden="true"
+                />
+              ))}
+            </div>
           </div>
+        </div>
 
-          {/* Editorial feed — big image + overlapping caption card, alternating */}
-          <div className="space-y-28 md:space-y-32 pb-20">
-            {capolavori.map((c, idx) => {
-              const left = idx % 2 === 0;
-              return (
-                <article key={c.n} className="group relative max-w-2xl mx-auto md:mx-0" style={{ marginLeft: left ? undefined : "auto" }}>
-                  {/* Number + tag row */}
-                  <div className={`flex items-baseline mb-4 md:mb-6 ${left ? "" : "flex-row-reverse"}`}>
-                    <span className="font-mono font-bold text-5xl md:text-6xl leading-none text-foreground/[0.06] select-none flex-1">
-                      {c.n}
+        {/* Marquee — track names ticker */}
+        <div className="relative overflow-hidden py-3 border-y border-background/10 bg-background/5 mb-10 md:mb-14">
+          <div className="flex animate-marquee whitespace-nowrap">
+            {[0, 1].map((k) => (
+              <div key={k} className="flex gap-8 items-center px-4 shrink-0">
+                {capolavori.map((c, i) => (
+                  <span key={`${k}-${i}`} className="flex items-center gap-8 shrink-0">
+                    <span className="font-display italic text-2xl md:text-3xl text-background/90">
+                      {c.name}
                     </span>
-                    <span className="font-mono text-[9px] px-2 py-1 border border-primary/40 text-primary uppercase tracking-[0.25em]">
-                      {c.tag}
+                    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary">
+                      {c.duration}
                     </span>
-                  </div>
+                    <span className="inline-block size-1.5 rounded-full bg-primary shrink-0" aria-hidden="true" />
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
 
-                  {/* Image + overlapping caption */}
-                  <div className={`relative ${left ? "ml-2 md:ml-4" : "mr-2 md:mr-4"}`}>
-                    <div className="aspect-[4/5] overflow-hidden rounded-sm shadow-2xl shadow-foreground/20 bg-card">
-                      <img
-                        src={c.img}
-                        alt={c.name}
-                        loading="lazy"
-                        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out-expo group-hover:scale-[1.04]"
-                      />
+        {/* Playlist track — horizontal snap scroller */}
+        <div className="relative">
+          <div
+            className="flex gap-5 md:gap-7 overflow-x-auto snap-x snap-mandatory pb-8 px-6 md:px-16 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {capolavori.map((c, idx) => (
+              <article
+                key={c.n}
+                className="group relative shrink-0 snap-center w-[78vw] sm:w-[62vw] md:w-[420px] lg:w-[460px]"
+                style={{ transform: `rotate(${idx % 2 === 0 ? "-1.2deg" : "1.2deg"})` }}
+              >
+                {/* Track # + tag */}
+                <div className="flex items-center justify-between mb-3 px-1">
+                  <span className="font-mono font-bold text-4xl md:text-5xl leading-none text-background/25 select-none">
+                    {c.n}
+                  </span>
+                  <span className="font-mono text-[9px] px-2 py-1 border border-primary/60 text-primary uppercase tracking-[0.25em] bg-background/5 backdrop-blur-sm">
+                    {c.tag}
+                  </span>
+                </div>
+
+                {/* Vinyl card */}
+                <div className="relative rounded-2xl overflow-hidden bg-background/5 ring-1 ring-background/10 shadow-2xl shadow-black/50 transition-transform duration-700 ease-out-expo group-hover:-translate-y-2 group-hover:rotate-0">
+                  {/* Gradient glow */}
+                  <div className={`pointer-events-none absolute -inset-1 bg-gradient-to-br ${c.accent} opacity-0 blur-2xl group-hover:opacity-40 transition-opacity duration-700`} aria-hidden="true" />
+
+                  {/* Album art */}
+                  <div className="relative aspect-square overflow-hidden">
+                    <img
+                      src={c.img}
+                      alt={c.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out-expo group-hover:scale-110"
+                    />
+                    {/* Shine sweep on hover */}
+                    <div className="pointer-events-none absolute inset-0 overflow-hidden">
+                      <div className="absolute top-0 -left-1/2 h-full w-1/3 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-shine" />
                     </div>
+                    {/* Bottom fade */}
+                    <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/85 via-black/30 to-transparent" aria-hidden="true" />
 
-                    <div
-                      className={`
-                        absolute -bottom-14 md:-bottom-16
-                        ${left ? "-left-2 md:-left-4 right-6 md:right-10 text-left" : "-right-2 md:-right-4 left-6 md:left-10 text-right"}
-                        bg-background p-5 md:p-6 shadow-lg shadow-foreground/5 ring-1 ring-foreground/5
-                        transition-transform duration-500 ease-out-expo group-hover:-translate-y-1
-                      `}
+                    {/* Play button */}
+                    <button
+                      type="button"
+                      aria-label={`Ascolta ${c.name}`}
+                      className="absolute top-4 right-4 size-11 rounded-full bg-background/95 text-foreground grid place-items-center shadow-xl scale-90 opacity-80 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 ease-out-expo hover:bg-primary hover:text-primary-foreground"
                     >
-                      <h3 className="font-display italic text-2xl md:text-3xl leading-tight mb-2 md:mb-3 text-foreground">
+                      <svg viewBox="0 0 24 24" className="size-4 fill-current" aria-hidden="true">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </button>
+
+                    {/* Overlay caption */}
+                    <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
+                      <h3 className="font-display italic text-2xl md:text-3xl leading-tight text-background mb-1.5">
                         {c.name}
                       </h3>
-                      <p className="text-xs md:text-sm leading-relaxed text-foreground/75 mb-4">
-                        {c.note}
-                      </p>
-                      <div className={`flex flex-wrap gap-x-5 gap-y-2 border-t border-foreground/10 pt-3 md:pt-4 ${left ? "" : "justify-end"}`}>
-                        {c.meta.map((m, i) => (
-                          <div key={m}>
-                            <span className="font-mono text-[8px] uppercase text-primary block mb-0.5 tracking-[0.2em]">
-                              {["Base", "Essenza", "Nota"][i] ?? "Detail"}
-                            </span>
-                            <span className="text-[11px] md:text-xs font-semibold text-foreground">
-                              {m}
-                            </span>
-                          </div>
-                        ))}
+                      <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-background/70">
+                        <span>{c.duration}</span>
+                        <span className="inline-block size-1 rounded-full bg-primary" aria-hidden="true" />
+                        <span>{c.bpm}</span>
                       </div>
                     </div>
                   </div>
-                </article>
-              );
-            })}
+
+                  {/* Track meta */}
+                  <div className="p-5 md:p-6 bg-background/[0.04]">
+                    <p className="text-[13px] md:text-sm leading-relaxed text-background/80 mb-4">
+                      {c.note}
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {c.meta.map((m) => (
+                        <span
+                          key={m}
+                          className="font-mono text-[10px] uppercase tracking-[0.2em] px-2.5 py-1 rounded-full border border-background/15 text-background/70 hover:border-primary hover:text-primary transition-colors"
+                        >
+                          {m}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
+
+            {/* Trailing spacer */}
+            <div className="shrink-0 w-6 md:w-16" aria-hidden="true" />
           </div>
 
-
-          {/* Footer note */}
-          <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-4 pt-5 border-t border-foreground/10">
-            <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-foreground/50">
-              Menu stagionale · Ingredienti locali
-            </p>
-            <a
-              href="#visit"
-              className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-primary hover:text-foreground transition-colors"
-            >
-              Assaggia in laboratorio
-              <span className="inline-block w-6 h-px bg-primary group-hover:w-10 transition-all" />
-            </a>
+          {/* Scroll hint */}
+          <div className="mt-2 flex items-center justify-center gap-3 font-mono text-[10px] uppercase tracking-[0.3em] text-background/50">
+            <span className="inline-block w-8 h-px bg-background/30" />
+            Scorri la playlist
+            <span className="inline-block w-8 h-px bg-background/30" />
           </div>
+        </div>
+
+        {/* Footer note */}
+        <div className="max-w-7xl mx-auto px-6 mt-10 md:mt-14 flex flex-col md:flex-row items-center justify-between gap-4 pt-5 border-t border-background/10">
+          <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-background/50">
+            Torte su misura · Occasioni speciali
+          </p>
+          <a
+            href="#visit"
+            className="group inline-flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.3em] text-primary hover:text-background transition-colors"
+          >
+            Ordina la tua traccia
+            <span className="inline-block w-6 h-px bg-primary group-hover:w-10 transition-all" />
+          </a>
         </div>
       </section>
 
