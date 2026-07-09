@@ -286,21 +286,16 @@ function Index() {
         {/* Header */}
         <div className="relative max-w-7xl mx-auto px-6">
           <div className="grid md:grid-cols-12 gap-8 items-center mb-10 md:mb-14">
-            {/* Decorative frame */}
-            <div className="md:col-span-3 flex md:justify-start justify-center">
+            {/* Decorative aperture disk */}
+            <div className="md:col-span-4 flex md:justify-start justify-center">
               <div className="relative size-32 md:size-40">
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/30 via-background/10 to-primary/20 ring-1 ring-background/20 animate-tilt" />
-                <div className="absolute inset-4 rounded-xl border border-background/15" />
-                <div className="absolute inset-8 rounded-lg bg-primary/80 grid place-items-center">
-                  <svg viewBox="0 0 24 24" className="size-10 text-background" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
-                    <rect x="3" y="6" width="18" height="14" rx="2" />
-                    <circle cx="8.5" cy="10.5" r="1.5" fill="currentColor" />
-                    <path d="M21 15l-5-5L9 17l-3-3-4 4" />
-                  </svg>
-                </div>
+                <div className="absolute inset-0 rounded-full border-2 border-dashed border-background/20 animate-spin-slow" />
+                <div className="absolute inset-4 rounded-full border border-background/10" />
+                <div className="absolute inset-8 rounded-full bg-primary/20" />
+                <div className="absolute inset-[45%] rounded-full bg-primary" />
               </div>
             </div>
-            <div className="md:col-span-6 text-center md:text-left">
+            <div className="md:col-span-8 text-center md:text-left">
               <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-primary mb-3 flex items-center gap-3 justify-center md:justify-start">
                 <span className="inline-block w-6 h-px bg-primary" />
                 La Galleria delle Torte
@@ -312,15 +307,6 @@ function Index() {
                 Nove scatti di zucchero e panna. Scorri la galleria,
                 <span className="italic font-display text-primary"> scegli la torta che ti ispira.</span>
               </p>
-            </div>
-            {/* Decorative aperture */}
-            <div className="md:col-span-3 flex md:justify-end justify-center">
-              <div className="relative size-24 md:size-28">
-                <div className="absolute inset-0 rounded-full border-2 border-dashed border-background/20 animate-spin-slow" />
-                <div className="absolute inset-4 rounded-full border border-background/10" />
-                <div className="absolute inset-8 rounded-full bg-primary/20" />
-                <div className="absolute inset-[45%] rounded-full bg-primary" />
-              </div>
             </div>
           </div>
         </div>
