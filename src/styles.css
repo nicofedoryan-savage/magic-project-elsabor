@@ -4,6 +4,14 @@
 
 @custom-variant dark (&:is(.dark *));
 
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 /* El Sabor — Yogurteria Artigianale
  * Warm cream background, deep espresso ink, terracotta primary.
  * Fonts loaded via <link> in src/routes/__root.tsx (Playfair Display, Inter, JetBrains Mono).

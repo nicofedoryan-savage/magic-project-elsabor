@@ -765,6 +765,31 @@ function Index() {
               ))}
             </div>
 
+            <div className="mt-10 relative overflow-hidden rounded-3xl border border-primary/30 bg-gradient-to-br from-primary/10 via-background to-primary/5 p-6 lg:p-8">
+              <div className="flex items-start gap-4">
+                <div className="size-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-2xl shrink-0 shadow-md animate-pulse">
+                  🍨
+                </div>
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-primary mb-2">
+                    Novità · Torte & Vaschette da asporto
+                  </p>
+                  <h3 className="font-display text-2xl md:text-3xl leading-tight mb-3">
+                    Vuoi una <span className="italic">torta</span> o una <span className="italic">vaschetta di gelato</span> da portare a casa?
+                  </h3>
+                  <p className="text-muted-foreground mb-4 text-pretty">
+                    Prepariamo su ordinazione torte personalizzate e vaschette di gelato artigianale nei gusti che preferisci. Chiama e ordina la tua.
+                  </p>
+                  <a
+                    href="tel:+39031904646"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
+                  >
+                    📞 Ordina al 031 904646
+                  </a>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div className="relative">
