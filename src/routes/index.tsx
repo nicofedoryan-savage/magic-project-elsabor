@@ -3,6 +3,7 @@ import flavorMirtilli from "@/assets/flavor-mirtilli.jpg";
 import flavorPistacchio from "@/assets/flavor-pistacchio.jpg";
 import flavorMango from "@/assets/flavor-mango.jpg";
 import shopInterior from "@/assets/coppette-frutti-cadorago.jpg.asset.json";
+import coppaCioccolato from "@/assets/coppa-cioccolato.jpg.asset.json";
 import chefPortrait from "@/assets/chef-portrait.jpg";
 import logo from "@/assets/el-sabor-logo.jpg";
 import torFrutti from "@/assets/torte/frutti-tropicali.jpg.asset.json";
