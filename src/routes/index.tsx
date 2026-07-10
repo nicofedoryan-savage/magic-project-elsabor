@@ -3,6 +3,7 @@ import flavorMirtilli from "@/assets/flavor-mirtilli.jpg";
 import flavorPistacchio from "@/assets/flavor-pistacchio.jpg";
 import flavorMango from "@/assets/flavor-mango.jpg";
 import shopInterior from "@/assets/coppette-frutti-cadorago.jpg.asset.json";
+import coppaCioccolato from "@/assets/coppa-cioccolato.jpg.asset.json";
 import chefPortrait from "@/assets/chef-portrait.jpg";
 import logo from "@/assets/el-sabor-logo.jpg";
 import torFrutti from "@/assets/torte/frutti-tropicali.jpg.asset.json";
@@ -504,8 +505,8 @@ function Index() {
       {/* Carta dei Gusti — Gelato */}
       <section id="carta" className="py-24 px-6 bg-card">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-            <div>
+          <div className="grid md:grid-cols-12 gap-8 items-end mb-16">
+            <div className="md:col-span-5">
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 La Carta — Gelato Artigianale
               </p>
@@ -515,10 +516,20 @@ function Index() {
                 <span className="italic text-primary">una sola tentazione.</span>
               </h2>
             </div>
-            <p className="text-muted-foreground max-w-sm text-pretty">
+            <p className="md:col-span-4 text-muted-foreground max-w-sm text-pretty">
               Mantecati ogni mattina. Dal classico al peccato, passando per i
               senza lattosio. Scegli il tuo mood.
             </p>
+            <div className="md:col-span-3 flex md:justify-end">
+              <div className="relative w-36 h-48 md:w-44 md:h-60 rounded-[2rem] overflow-hidden shadow-2xl rotate-3 ring-1 ring-foreground/10">
+                <img
+                  src={cdn(coppaCioccolato.url)}
+                  alt="Coppa di yogurt con cioccolato in preparazione"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
 
           {[
@@ -710,47 +721,38 @@ function Index() {
               <span className="italic">nel cuore di Cadorago</span>
             </h2>
             <div className="space-y-6">
-              {[
-                {
-                  n: "01",
-                  l: "Indirizzo",
-                  v: "Via Goffredo Mameli 2/D, 22071 Cadorago (CO)",
-                },
-                { n: "02", l: "Orari", v: "Tutti i giorni: 12:00 – 23:30" },
-                {
-                  n: "03",
-                  l: "Telefono",
-                  v: (
-                    <a href="tel:+39031904646" className="hover:text-primary transition-colors">
-                      031 904646
+            {[
+              {
+                n: "01",
+                l: "Indirizzo",
+                v: "Via Goffredo Mameli 2/D, 22071 Cadorago (CO)",
+              },
+              { n: "02", l: "Orari", v: "Tutti i giorni: 12:00 – 23:30" },
+              {
+                n: "03",
+                l: "Seguici",
+                v: (
+                  <span className="flex flex-wrap gap-4">
+                    <a
+                      href="https://www.instagram.com/elsabor_layogurteria/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                    >
+                      Instagram ↗
                     </a>
-                  ),
-                },
-                {
-                  n: "04",
-                  l: "Seguici",
-                  v: (
-                    <span className="flex flex-wrap gap-4">
-                      <a
-                        href="https://www.instagram.com/elsabor_layogurteria/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                      >
-                        Instagram ↗
-                      </a>
-                      <a
-                        href="https://www.facebook.com/elsaborlayogurteria/photos"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                      >
-                        Facebook ↗
-                      </a>
-                    </span>
-                  ),
-                },
-              ].map((row) => (
+                    <a
+                      href="https://www.facebook.com/elsaborlayogurteria/photos"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                    >
+                      Facebook ↗
+                    </a>
+                  </span>
+                ),
+              },
+            ].map((row) => (
                 <div key={row.n} className="flex items-start gap-4">
                   <div className="size-10 rounded-full bg-background flex items-center justify-center border border-border font-mono text-xs shrink-0">
                     {row.n}
