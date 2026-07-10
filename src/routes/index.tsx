@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
 import flavorMirtilli from "@/assets/flavor-mirtilli.jpg";
 import flavorPistacchio from "@/assets/flavor-pistacchio.jpg";
 import flavorMango from "@/assets/flavor-mango.jpg";
@@ -151,6 +152,13 @@ const marqueeMeta = [
 ];
 
 function Index() {
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (window.location.hash) {
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
       {/* Navigation */}
