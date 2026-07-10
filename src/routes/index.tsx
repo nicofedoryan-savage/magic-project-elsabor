@@ -505,8 +505,8 @@ function Index() {
       {/* Carta dei Gusti — Gelato */}
       <section id="carta" className="py-24 px-6 bg-card">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-            <div>
+          <div className="grid md:grid-cols-12 gap-8 items-end mb-16">
+            <div className="md:col-span-5">
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 La Carta — Gelato Artigianale
               </p>
@@ -516,10 +516,20 @@ function Index() {
                 <span className="italic text-primary">una sola tentazione.</span>
               </h2>
             </div>
-            <p className="text-muted-foreground max-w-sm text-pretty">
+            <p className="md:col-span-4 text-muted-foreground max-w-sm text-pretty">
               Mantecati ogni mattina. Dal classico al peccato, passando per i
               senza lattosio. Scegli il tuo mood.
             </p>
+            <div className="md:col-span-3 flex md:justify-end">
+              <div className="relative w-36 h-48 md:w-44 md:h-60 rounded-[2rem] overflow-hidden shadow-2xl rotate-3 ring-1 ring-foreground/10">
+                <img
+                  src={cdn(coppaCioccolato.url)}
+                  alt="Coppa di yogurt con cioccolato in preparazione"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
 
           {[
