@@ -721,47 +721,38 @@ function Index() {
               <span className="italic">nel cuore di Cadorago</span>
             </h2>
             <div className="space-y-6">
-              {[
-                {
-                  n: "01",
-                  l: "Indirizzo",
-                  v: "Via Goffredo Mameli 2/D, 22071 Cadorago (CO)",
-                },
-                { n: "02", l: "Orari", v: "Tutti i giorni: 12:00 – 23:30" },
-                {
-                  n: "03",
-                  l: "Telefono",
-                  v: (
-                    <a href="tel:+39031904646" className="hover:text-primary transition-colors">
-                      031 904646
+            {[
+              {
+                n: "01",
+                l: "Indirizzo",
+                v: "Via Goffredo Mameli 2/D, 22071 Cadorago (CO)",
+              },
+              { n: "02", l: "Orari", v: "Tutti i giorni: 12:00 – 23:30" },
+              {
+                n: "03",
+                l: "Seguici",
+                v: (
+                  <span className="flex flex-wrap gap-4">
+                    <a
+                      href="https://www.instagram.com/elsabor_layogurteria/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                    >
+                      Instagram ↗
                     </a>
-                  ),
-                },
-                {
-                  n: "04",
-                  l: "Seguici",
-                  v: (
-                    <span className="flex flex-wrap gap-4">
-                      <a
-                        href="https://www.instagram.com/elsabor_layogurteria/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                      >
-                        Instagram ↗
-                      </a>
-                      <a
-                        href="https://www.facebook.com/elsaborlayogurteria/photos"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-primary transition-colors"
-                      >
-                        Facebook ↗
-                      </a>
-                    </span>
-                  ),
-                },
-              ].map((row) => (
+                    <a
+                      href="https://www.facebook.com/elsaborlayogurteria/photos"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-primary transition-colors"
+                    >
+                      Facebook ↗
+                    </a>
+                  </span>
+                ),
+              },
+            ].map((row) => (
                 <div key={row.n} className="flex items-start gap-4">
                   <div className="size-10 rounded-full bg-background flex items-center justify-center border border-border font-mono text-xs shrink-0">
                     {row.n}
