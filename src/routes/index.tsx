@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
+import { CookieConsent } from "@/components/CookieConsent";
 import flavorMirtilli from "@/assets/flavor-mirtilli.jpg";
 import flavorPistacchio from "@/assets/flavor-pistacchio.jpg";
 import flavorMango from "@/assets/flavor-mango.jpg";
@@ -192,7 +193,7 @@ function Index() {
       </nav>
 
       {/* Hero */}
-      <section id="storia" className="relative px-6 py-24 lg:py-40 overflow-hidden">
+      <section id="storia" className="relative px-5 sm:px-6 py-16 sm:py-24 lg:py-40 overflow-hidden">
         {/* Ambient glows */}
         <div className="absolute top-1/4 -left-32 size-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 -right-32 size-96 bg-primary/5 rounded-full blur-[120px] pointer-events-none" />
@@ -236,6 +237,9 @@ function Index() {
                 alt="El Sabor — Gelateria & Yogurteria dal 1999"
                 width={200}
                 height={200}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-full h-full rounded-full object-cover ring-1 ring-background/40"
               />
             </div>
@@ -249,12 +253,12 @@ function Index() {
             ★ Yogurteria · Gelateria · Crêperie ★
           </p>
 
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-medium leading-[0.9] text-balance mb-10">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-medium leading-[0.95] md:leading-[0.9] text-balance mb-8 md:mb-10">
             Yogurt <span className="italic font-normal text-primary">Fresco,</span>
             <br />
             Anima <span className="italic">Artigiana.</span>
           </h1>
-          <p className="max-w-xl mx-auto text-lg text-muted-foreground mb-8 leading-relaxed text-pretty">
+          <p className="max-w-xl mx-auto text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed text-pretty px-2">
             Dal 1999, trasformiamo il miglior latte locale in un'esperienza
             cremosa. A Cadorago, il gusto incontra il benessere in ogni
             cucchiaiata.
@@ -309,7 +313,7 @@ function Index() {
                 <span className="inline-block w-6 h-px bg-primary" />
                 La Galleria delle Torte
               </p>
-              <h2 className="font-display text-4xl md:text-6xl leading-[0.95] tracking-tight text-background">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-6xl leading-[0.95] tracking-tight text-background">
                 I Nostri <span className="italic text-primary">Capolavori.</span>
               </h2>
               <p className="mt-4 text-background/70 text-sm md:text-base leading-relaxed max-w-xl">
@@ -355,7 +359,7 @@ function Index() {
               >
                 {/* Photo # + tag */}
                 <div className="flex items-center justify-between mb-3 px-1">
-                  <span className="font-mono font-bold text-4xl md:text-5xl leading-none text-background/25 select-none">
+                  <span className="font-mono font-bold text-3xl sm:text-4xl md:text-5xl leading-none text-background/25 select-none">
                     {c.n}
                   </span>
                   <span className="font-mono text-[9px] px-2 py-1 border border-primary/60 text-primary uppercase tracking-[0.25em] bg-background/5 backdrop-blur-sm">
@@ -518,7 +522,7 @@ function Index() {
               <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
                 La Carta — Gelato Artigianale
               </p>
-              <h2 className="font-display text-4xl md:text-6xl leading-[0.95]">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-6xl leading-[0.95]">
                 Trenta gusti,
                 <br />
                 <span className="italic text-primary">una sola tentazione.</span>
@@ -640,7 +644,7 @@ function Index() {
       {/* Reviews cards */}
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-display text-4xl md:text-5xl mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl mb-4">
             La voce dei nostri <span className="italic">clienti</span>
           </h2>
           <p className="text-muted-foreground max-w-md mb-16">
@@ -682,7 +686,7 @@ function Index() {
 
       {/* Contact / Visit */}
       {/* Chef / Founder */}
-      <section className="px-6 py-24 bg-card">
+      <section className="px-5 sm:px-6 py-16 sm:py-24 bg-card">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-2 relative">
             <img
@@ -701,7 +705,7 @@ function Index() {
             <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground mb-4">
               Dietro il bancone
             </p>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl leading-tight mb-6">
               Chantal, <span className="italic">la mano</span>
               <br />
               dietro ogni cucchiaiata.
@@ -720,10 +724,10 @@ function Index() {
         </div>
       </section>
 
-      <section id="visit" className="px-6 py-24">
+      <section id="visit" className="px-5 sm:px-6 py-16 sm:py-24">
         <div className="max-w-7xl mx-auto bg-card rounded-[40px] border border-primary/15 p-8 lg:p-16 grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="font-display text-4xl md:text-5xl mb-8 leading-tight">
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl mb-8 leading-tight">
               Vieni a trovarci
               <br />
               <span className="italic">nel cuore di Cadorago</span>
@@ -842,6 +846,7 @@ function Index() {
 
 
       </footer>
+      <CookieConsent />
     </div>
   );
 }
