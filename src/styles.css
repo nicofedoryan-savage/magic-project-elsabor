@@ -12,6 +12,9 @@ html {
   html { scroll-behavior: auto; }
 }
 
+/* Offset anchor targets so sticky nav doesn't overlap section headings */
+section[id] { scroll-margin-top: 80px; }
+
 /* El Sabor — Yogurteria Artigianale
  * Warm cream background, deep espresso ink, terracotta primary.
  * Fonts loaded via <link> in src/routes/__root.tsx (Playfair Display, Inter, JetBrains Mono).
