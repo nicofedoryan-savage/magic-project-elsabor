@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect } from "react";
+import { CookieConsent } from "@/components/CookieConsent";
 import flavorMirtilli from "@/assets/flavor-mirtilli.jpg";
 import flavorPistacchio from "@/assets/flavor-pistacchio.jpg";
 import flavorMango from "@/assets/flavor-mango.jpg";
