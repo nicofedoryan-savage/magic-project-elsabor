@@ -237,6 +237,9 @@ function Index() {
                 alt="El Sabor — Gelateria & Yogurteria dal 1999"
                 width={200}
                 height={200}
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
                 className="w-full h-full rounded-full object-cover ring-1 ring-background/40"
               />
             </div>
@@ -250,12 +253,12 @@ function Index() {
             ★ Yogurteria · Gelateria · Crêperie ★
           </p>
 
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-medium leading-[0.9] text-balance mb-10">
+          <h1 className="font-display text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-medium leading-[0.95] md:leading-[0.9] text-balance mb-8 md:mb-10">
             Yogurt <span className="italic font-normal text-primary">Fresco,</span>
             <br />
             Anima <span className="italic">Artigiana.</span>
           </h1>
-          <p className="max-w-xl mx-auto text-lg text-muted-foreground mb-8 leading-relaxed text-pretty">
+          <p className="max-w-xl mx-auto text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed text-pretty px-2">
             Dal 1999, trasformiamo il miglior latte locale in un'esperienza
             cremosa. A Cadorago, il gusto incontra il benessere in ogni
             cucchiaiata.
