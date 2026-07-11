@@ -902,6 +902,22 @@ function Index() {
 
 
       </footer>
+      {/* Floating quick actions */}
+      <a
+        href="tel:+39031904646"
+        aria-label="Chiama El Sabor"
+        className="md:hidden fixed bottom-4 left-4 z-40 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-primary-foreground shadow-2xl shadow-primary/30 font-mono text-[11px] uppercase tracking-widest hover:bg-primary/90 transition-colors"
+      >
+        <span aria-hidden>📞</span> Chiama
+      </a>
+      <button
+        type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Torna in cima"
+        className={`fixed bottom-4 right-4 z-40 inline-flex size-11 items-center justify-center rounded-full bg-foreground text-background shadow-2xl transition-all duration-300 hover:bg-primary ${showTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
+      >
+        <span aria-hidden className="text-lg leading-none">↑</span>
+      </button>
       <CookieConsent />
     </div>
   );
