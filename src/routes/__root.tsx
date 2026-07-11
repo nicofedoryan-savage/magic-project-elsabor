@@ -84,6 +84,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Dal 1999 a Cadorago (CO): yogurt artigianale, gelato, crepes e torte gelato. Materie prime fresche, opzioni per celiaci e diabetici.",
       },
       { name: "author", content: "El Sabor" },
+      { name: "referrer", content: "strict-origin-when-cross-origin" },
+      { name: "theme-color", content: "#f7f2e8" },
+      { name: "format-detection", content: "telephone=yes" },
+      { httpEquiv: "X-Content-Type-Options", content: "nosniff" },
+      { httpEquiv: "Permissions-Policy", content: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
       { property: "og:title", content: "El Sabor — Yogurteria artigianale dal 1999" },
       {
         property: "og:description",
