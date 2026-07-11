@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { CookieConsent } from "@/components/CookieConsent";
 import flavorMirtilli from "@/assets/flavor-mirtilli.jpg";
 import flavorPistacchio from "@/assets/flavor-pistacchio.jpg";
@@ -153,6 +153,8 @@ const marqueeMeta = [
 ];
 
 function Index() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [showTop, setShowTop] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined") return;
     if (window.location.hash) {
@@ -160,11 +162,22 @@ function Index() {
     }
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
   }, []);
+  useEffect(() => {
+    const onScroll = () => setShowTop(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const navLinks = [
+    { href: "#gusti", label: "Il Menù" },
+    { href: "#carta", label: "Gusti Gelato" },
+    { href: "#storia", label: "La Storia" },
+    { href: "#visit", label: "Contatti" },
+  ];
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary/20">
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 bg-background/80 backdrop-blur-md border-b border-foreground/5">
-        <div className="flex items-center gap-3">
+      <nav className="sticky top-0 z-50 flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4 bg-background/85 backdrop-blur-md border-b border-foreground/5">
+        <a href="#storia" className="flex items-center gap-3" aria-label="El Sabor — vai in cima">
           <img
             src={logo}
             alt="El Sabor — Gelateria e Yogurteria dal 1999"
@@ -178,19 +191,62 @@ function Index() {
               dal 1999
             </span>
           </div>
-        </div>
+        </a>
         <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest">
-          <a href="#gusti" className="hover:text-primary transition-colors">Il Menù</a>
-          <a href="#carta" className="hover:text-primary transition-colors">Gusti Gelato</a>
-          <a href="#storia" className="hover:text-primary transition-colors">La Storia</a>
-          <a href="#visit" className="hover:text-primary transition-colors">Contatti</a>
+          {navLinks.map((l) => (
+            <a key={l.href} href={l.href} className="hover:text-primary transition-colors">{l.label}</a>
+          ))}
         </div>
-        <div className="hidden md:block">
-          <span className="font-mono text-[10px] text-muted-foreground">
-            CADORAGO — CO
+        <div className="hidden md:flex items-center gap-4">
+          <a
+            href="tel:+39031904646"
+            className="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2 font-mono text-[10px] uppercase tracking-widest text-primary-foreground hover:bg-primary/90 transition-colors"
+          >
+            <span aria-hidden>📞</span> Chiama
+          </a>
+        </div>
+        <button
+          type="button"
+          onClick={() => setMenuOpen((v) => !v)}
+          className="md:hidden inline-flex size-11 items-center justify-center rounded-full border border-foreground/15 text-foreground/80 hover:text-primary hover:border-primary transition-colors"
+          aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+        >
+          <span className="relative block h-3 w-5">
+            <span className={`absolute inset-x-0 top-0 h-0.5 bg-current transition-transform ${menuOpen ? "translate-y-1.5 rotate-45" : ""}`} />
+            <span className={`absolute inset-x-0 top-1.5 h-0.5 bg-current transition-opacity ${menuOpen ? "opacity-0" : ""}`} />
+            <span className={`absolute inset-x-0 top-3 h-0.5 bg-current transition-transform ${menuOpen ? "-translate-y-1.5 -rotate-45" : ""}`} />
           </span>
-        </div>
+        </button>
       </nav>
+      {/* Mobile menu drawer */}
+      <div
+        id="mobile-menu"
+        className={`md:hidden fixed inset-x-0 top-[68px] z-40 origin-top transition-all duration-300 ${menuOpen ? "opacity-100 scale-y-100" : "opacity-0 scale-y-0 pointer-events-none"}`}
+      >
+        <div className="mx-3 rounded-2xl border border-foreground/10 bg-background/95 backdrop-blur-md shadow-2xl overflow-hidden">
+          <nav className="flex flex-col divide-y divide-foreground/5">
+            {navLinks.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                onClick={() => setMenuOpen(false)}
+                className="px-5 py-4 font-bold uppercase tracking-widest text-sm hover:bg-primary/5 hover:text-primary transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+            <a
+              href="tel:+39031904646"
+              onClick={() => setMenuOpen(false)}
+              className="px-5 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-widest text-sm text-center"
+            >
+              📞 Chiama 031 904646
+            </a>
+          </nav>
+        </div>
+      </div>
 
       {/* Hero */}
       <section id="storia" className="relative px-5 sm:px-6 py-16 sm:py-24 lg:py-40 overflow-hidden">
@@ -270,17 +326,17 @@ function Index() {
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
             <a
               href="#visit"
-              className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-tighter text-sm rounded-full hover:bg-primary/90 transition-all duration-300 group shadow-lg shadow-primary/20"
+              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-tighter text-sm rounded-full hover:bg-primary/90 transition-all duration-300 group shadow-lg shadow-primary/20"
             >
               Vieni a Trovarci
               <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </a>
             <a
               href="#carta"
-              className="inline-flex items-center px-8 py-4 border border-foreground/20 text-foreground font-bold uppercase tracking-tighter text-sm rounded-full hover:border-primary hover:text-primary transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 border border-foreground/20 text-foreground font-bold uppercase tracking-tighter text-sm rounded-full hover:border-primary hover:text-primary transition-all duration-300"
             >
               Sfoglia i Gusti
             </a>
@@ -846,6 +902,22 @@ function Index() {
 
 
       </footer>
+      {/* Floating quick actions */}
+      <a
+        href="tel:+39031904646"
+        aria-label="Chiama El Sabor"
+        className="md:hidden fixed bottom-4 left-4 z-40 inline-flex items-center gap-2 rounded-full bg-primary px-4 py-3 text-primary-foreground shadow-2xl shadow-primary/30 font-mono text-[11px] uppercase tracking-widest hover:bg-primary/90 transition-colors"
+      >
+        <span aria-hidden>📞</span> Chiama
+      </a>
+      <button
+        type="button"
+        onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        aria-label="Torna in cima"
+        className={`fixed bottom-4 right-4 z-40 inline-flex size-11 items-center justify-center rounded-full bg-foreground text-background shadow-2xl transition-all duration-300 hover:bg-primary ${showTop ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"}`}
+      >
+        <span aria-hidden className="text-lg leading-none">↑</span>
+      </button>
       <CookieConsent />
     </div>
   );
