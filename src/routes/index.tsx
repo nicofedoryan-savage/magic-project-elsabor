@@ -326,17 +326,17 @@ function Index() {
             </span>
           </div>
 
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-stretch sm:items-center max-w-md sm:max-w-none mx-auto">
             <a
               href="#visit"
-              className="inline-flex items-center px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-tighter text-sm rounded-full hover:bg-primary/90 transition-all duration-300 group shadow-lg shadow-primary/20"
+              className="inline-flex items-center justify-center px-8 py-4 bg-primary text-primary-foreground font-bold uppercase tracking-tighter text-sm rounded-full hover:bg-primary/90 transition-all duration-300 group shadow-lg shadow-primary/20"
             >
               Vieni a Trovarci
               <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
             </a>
             <a
               href="#carta"
-              className="inline-flex items-center px-8 py-4 border border-foreground/20 text-foreground font-bold uppercase tracking-tighter text-sm rounded-full hover:border-primary hover:text-primary transition-all duration-300"
+              className="inline-flex items-center justify-center px-8 py-4 border border-foreground/20 text-foreground font-bold uppercase tracking-tighter text-sm rounded-full hover:border-primary hover:text-primary transition-all duration-300"
             >
               Sfoglia i Gusti
             </a>
