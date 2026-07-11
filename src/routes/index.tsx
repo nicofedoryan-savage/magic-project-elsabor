@@ -846,6 +846,7 @@ function Index() {
 
 
       </footer>
+      <CookieConsent />
     </div>
   );
 }
