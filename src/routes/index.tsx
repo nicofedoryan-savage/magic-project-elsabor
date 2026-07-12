@@ -18,8 +18,12 @@ import torPopArt from "@/assets/torte/pop-art.webp.asset.json";
 import torQuaranta from "@/assets/torte/quaranta-anni.webp.asset.json";
 import torCamilla from "@/assets/torte/camilla-kitty.webp.asset.json";
 
-// Le asset .asset.json sono servite dal CDN Lovable a /__l5e/... del progetto corrente.
-const cdn = (u: string) => u;
+// Le asset .asset.json sono servite dal CDN Lovable a /__l5e/...
+// Su host esterni (Vercel, custom domain non-Lovable) il path relativo non
+// esiste: prefissiamo l'origin Lovable assoluto così le immagini si vedono ovunque.
+const LOVABLE_ASSET_ORIGIN = "https://magic-project-copy.lovable.app";
+const cdn = (u: string) =>
+  u.startsWith("/__l5e/") ? `${LOVABLE_ASSET_ORIGIN}${u}` : u;
 
 const capolavori = [
   {
