@@ -107,6 +107,60 @@ const capolavori = [
 
 
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "El Sabor Cadorago — Yogurteria, Gelateria e Torte artigianali dal 1999" },
+      {
+        name: "description",
+        content:
+          "El Sabor a Cadorago (CO): yogurt artigianale, gelato mantecato ogni mattina, torte gelato su misura e vaschette da asporto. Ordini al 031 904646.",
+      },
+      { name: "keywords", content: "gelateria Cadorago, yogurteria Cadorago, torte gelato Como, vaschette gelato Cadorago, gelato artigianale Como" },
+      { property: "og:title", content: "El Sabor — Yogurteria e Gelateria artigianale a Cadorago" },
+      {
+        property: "og:description",
+        content: "Dal 1999 yogurt, gelato, crêpes e torte gelato artigianali. Cadorago (CO).",
+      },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://magic-project-copy.lovable.app/" },
+      { property: "og:locale", content: "it_IT" },
+      { property: "og:site_name", content: "El Sabor" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "geo.region", content: "IT-CO" },
+      { name: "geo.placename", content: "Cadorago" },
+    ],
+    links: [
+      { rel: "canonical", href: "https://magic-project-copy.lovable.app/" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "IceCreamShop",
+          name: "El Sabor La Yogurteria",
+          description:
+            "Yogurteria, gelateria e crêperie artigianale a Cadorago dal 1999. Torte gelato su misura e vaschette da asporto.",
+          image: "https://magic-project-copy.lovable.app/favicon.jpg",
+          url: "https://magic-project-copy.lovable.app/",
+          telephone: "+39 031 904646",
+          priceRange: "€€",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Cadorago",
+            addressRegion: "CO",
+            addressCountry: "IT",
+          },
+          sameAs: [
+            "https://www.instagram.com/elsabor_layogurteria/",
+            "https://www.facebook.com/elsaborlayogurteria/",
+          ],
+          servesCuisine: ["Gelato", "Yogurt", "Crêpes", "Torte"],
+          foundingDate: "1999",
+        }),
+      },
+    ],
+  }),
   component: Index,
 });
 
