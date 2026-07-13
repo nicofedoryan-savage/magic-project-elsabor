@@ -1002,6 +1002,10 @@ function Index() {
         </div>
         <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-6 max-w-6xl mx-auto">
           <div className="font-display italic text-xl text-primary">El Sabor</div>
+          <div className="flex gap-6 font-mono text-[10px] uppercase tracking-widest">
+            <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="/cookie" className="text-muted-foreground hover:text-primary transition-colors">Cookie Policy</a>
+          </div>
           <div className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase text-center space-y-1">
             <div>El Sabor La Yogurteria — P.IVA 04117410135</div>
             <div>© {new Date().getFullYear()} El Sabor Cadorago — Yogurteria · Gelateria · Crêperie dal 1999</div>
