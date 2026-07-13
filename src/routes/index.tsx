@@ -518,7 +518,7 @@ function Index() {
                   <div className="relative aspect-square overflow-hidden">
                     <img
                       src={c.img}
-                      alt={c.name}
+                      alt={c.alt}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out-expo group-hover:scale-110"
                     />
