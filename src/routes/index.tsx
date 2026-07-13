@@ -21,10 +21,9 @@ import torCamilla from "@/assets/torte/camilla-kitty.webp";
 const SITE_URL = "https://magic-project-elsabor.vercel.app";
 const PHONE_DISPLAY = "031 904646";
 const PHONE_TEL = "+39031904646";
-// wa.me: prefisso internazionale 39 + numero senza lo 0 iniziale
+// wa.me: prefisso internazionale 39 + numero senza lo 0 iniziale (031 904646 → 3931904646)
 const WHATSAPP_URL =
-  "https://wa.me/393190446" +
-  "46?text=" +
+  "https://wa.me/3931904646?text=" +
   encodeURIComponent("Ciao, vorrei ordinare una torta gelato");
 const MAPS_URL =
   "https://www.google.com/maps/dir/?api=1&destination=" +
