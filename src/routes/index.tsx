@@ -926,7 +926,7 @@ function Index() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-3">
                     <a
-                      href={PHONE_TEL === "+39031904646" ? "tel:+39031904646" : PHONE_TEL}
+                      href={`tel:${PHONE_TEL}`}
                       className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
                     >
                       📞 Chiama {PHONE_DISPLAY}
