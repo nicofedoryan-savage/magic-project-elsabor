@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as CookieRouteImport } from './routes/cookie'
 import { Route as IndexRouteImport } from './routes/index'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -23,6 +24,11 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CookieRoute = CookieRouteImport.update({
+  id: '/cookie',
+  path: '/cookie',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/cookie': typeof CookieRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/cookie': typeof CookieRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/cookie': typeof CookieRoute
   '/privacy': typeof PrivacyRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/sitemap.xml'
+  fullPaths: '/' | '/cookie' | '/privacy' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/sitemap.xml'
-  id: '__root__' | '/' | '/privacy' | '/sitemap.xml'
+  to: '/' | '/cookie' | '/privacy' | '/sitemap.xml'
+  id: '__root__' | '/' | '/cookie' | '/privacy' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  CookieRoute: typeof CookieRoute
   PrivacyRoute: typeof PrivacyRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/cookie': {
+      id: '/cookie'
+      path: '/cookie'
+      fullPath: '/cookie'
+      preLoaderRoute: typeof CookieRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  CookieRoute: CookieRoute,
   PrivacyRoute: PrivacyRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
