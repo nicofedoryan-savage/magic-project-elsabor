@@ -930,14 +930,6 @@ function Index() {
                     >
                       📞 Chiama {PHONE_DISPLAY}
                     </a>
-                    <a
-                      href={WHATSAPP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
-                    >
-                      💬 Ordina su WhatsApp
-                    </a>
                   </div>
                 </div>
               </div>
