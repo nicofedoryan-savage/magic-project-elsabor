@@ -880,6 +880,7 @@ function Index() {
                 n: "01",
                 l: "Indirizzo",
                 v: "Via Goffredo Mameli 2/D, 22071 Cadorago (CO)",
+                href: MAPS_URL,
               },
               { n: "02", l: "Orari", v: "Tutti i giorni: 12:00 – 23:30" },
             ].map((row) => (
@@ -891,7 +892,18 @@ function Index() {
                     <p className="font-bold uppercase tracking-widest text-[10px] text-muted-foreground mb-1">
                       {row.l}
                     </p>
-                    <p className="text-lg">{row.v}</p>
+                    {row.href ? (
+                      <a
+                        href={row.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg underline-offset-4 hover:underline hover:text-primary transition-colors"
+                      >
+                        {row.v}
+                      </a>
+                    ) : (
+                      <p className="text-lg">{row.v}</p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -912,12 +924,22 @@ function Index() {
                   <p className="text-muted-foreground mb-4 text-pretty">
                     Prepariamo su ordinazione torte personalizzate e vaschette di gelato artigianale nei gusti che preferisci. Chiama e ordina la tua.
                   </p>
-                  <a
-                    href="tel:+39031904646"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
-                  >
-                    📞 Ordina al 031 904646
-                  </a>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href={PHONE_TEL === "+39031904646" ? "tel:+39031904646" : PHONE_TEL}
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
+                    >
+                      📞 Chiama {PHONE_DISPLAY}
+                    </a>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
+                    >
+                      💬 Ordina su WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
