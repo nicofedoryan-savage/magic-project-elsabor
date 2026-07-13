@@ -140,7 +140,9 @@ export const Route = createFileRoute("/")({
         content: "Dal 1999 yogurt, gelato, crêpes e torte gelato artigianali. Cadorago (CO).",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://magic-project-copy.lovable.app/" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}/favicon.jpg` },
+      { name: "twitter:image", content: `${SITE_URL}/favicon.jpg` },
       { property: "og:locale", content: "it_IT" },
       { property: "og:site_name", content: "El Sabor" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -148,7 +150,7 @@ export const Route = createFileRoute("/")({
       { name: "geo.placename", content: "Cadorago" },
     ],
     links: [
-      { rel: "canonical", href: "https://magic-project-copy.lovable.app/" },
+      { rel: "canonical", href: `${SITE_URL}/` },
     ],
     scripts: [
       {
@@ -159,16 +161,28 @@ export const Route = createFileRoute("/")({
           name: "El Sabor La Yogurteria",
           description:
             "Yogurteria, gelateria e crêperie artigianale a Cadorago dal 1999. Torte gelato su misura e vaschette da asporto.",
-          image: "https://magic-project-copy.lovable.app/favicon.jpg",
-          url: "https://magic-project-copy.lovable.app/",
-          telephone: "+39 031 904646",
+          image: `${SITE_URL}/favicon.jpg`,
+          url: `${SITE_URL}/`,
+          telephone: PHONE_TEL,
           priceRange: "€€",
           address: {
             "@type": "PostalAddress",
+            streetAddress: "Via Goffredo Mameli 2/D",
             addressLocality: "Cadorago",
             addressRegion: "CO",
+            postalCode: "22071",
             addressCountry: "IT",
           },
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday",
+              ],
+              opens: "12:00",
+              closes: "23:30",
+            },
+          ],
           sameAs: [
             "https://www.instagram.com/elsabor_layogurteria/",
             "https://www.facebook.com/elsaborlayogurteria/",
@@ -663,7 +677,7 @@ function Index() {
             <div className="md:col-span-3 flex md:justify-end">
               <div className="relative w-36 h-48 md:w-44 md:h-60 rounded-[2rem] overflow-hidden shadow-2xl rotate-3 ring-1 ring-foreground/10">
                 <img
-                  src={cdn(coppaCioccolato.url)}
+                  src={coppaCioccolato}
                   alt="Coppa di yogurt con cioccolato in preparazione"
                   loading="lazy"
                   className="w-full h-full object-cover"
@@ -912,7 +926,7 @@ function Index() {
 
           <div className="relative">
             <img
-              src={cdn(shopInterior.url)}
+              src={shopInterior}
               alt="Interno del negozio El Sabor a Cadorago"
               width={800}
               height={600}
