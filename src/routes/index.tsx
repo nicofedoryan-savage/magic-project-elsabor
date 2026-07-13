@@ -4,26 +4,30 @@ import { CookieConsent } from "@/components/CookieConsent";
 import flavorMirtilli from "@/assets/flavor-mirtilli.jpg";
 import flavorPistacchio from "@/assets/flavor-pistacchio.jpg";
 import flavorMango from "@/assets/flavor-mango.jpg";
-import shopInterior from "@/assets/coppette-frutti-cadorago.jpg.asset.json";
-import coppaCioccolato from "@/assets/coppa-cioccolato.jpg.asset.json";
+import shopInterior from "@/assets/coppette-frutti-cadorago.jpg";
+import coppaCioccolato from "@/assets/coppa-cioccolato.jpg";
 import chefPortrait from "@/assets/chef-portrait.jpg";
 import logo from "@/assets/el-sabor-logo.jpg";
-import torFrutti from "@/assets/torte/frutti-tropicali.jpg.asset.json";
-import torPe from "@/assets/torte/tanti-auguri-pe.webp.asset.json";
-import torMamma from "@/assets/torte/cuore-mamma.webp.asset.json";
-import torFrutta from "@/assets/torte/tanti-auguri-frutta.jpg.asset.json";
-import torFragole from "@/assets/torte/fragole-passion.webp.asset.json";
-import torMinnie from "@/assets/torte/minnie-nicole.webp.asset.json";
-import torPopArt from "@/assets/torte/pop-art.webp.asset.json";
-import torQuaranta from "@/assets/torte/quaranta-anni.webp.asset.json";
-import torCamilla from "@/assets/torte/camilla-kitty.webp.asset.json";
+import torFrutti from "@/assets/torte/frutti-tropicali.jpg";
+import torPe from "@/assets/torte/tanti-auguri-pe.webp";
+import torMamma from "@/assets/torte/cuore-mamma.webp";
+import torFrutta from "@/assets/torte/tanti-auguri-frutta.jpg";
+import torFragole from "@/assets/torte/fragole-passion.webp";
+import torMinnie from "@/assets/torte/minnie-nicole.webp";
+import torPopArt from "@/assets/torte/pop-art.webp";
+import torQuaranta from "@/assets/torte/quaranta-anni.webp";
+import torCamilla from "@/assets/torte/camilla-kitty.webp";
 
-// Le asset .asset.json sono servite dal CDN Lovable a /__l5e/...
-// Su host esterni (Vercel, custom domain non-Lovable) il path relativo non
-// esiste: prefissiamo l'origin Lovable assoluto così le immagini si vedono ovunque.
-const LOVABLE_ASSET_ORIGIN = "https://magic-project-copy.lovable.app";
-const cdn = (u: string) =>
-  u.startsWith("/__l5e/") ? `${LOVABLE_ASSET_ORIGIN}${u}` : u;
+const SITE_URL = "https://magic-project-elsabor.vercel.app";
+const PHONE_DISPLAY = "031 904646";
+const PHONE_TEL = "+39031904646";
+// wa.me: prefisso internazionale 39 + numero senza lo 0 iniziale (031 904646 → 3931904646)
+const WHATSAPP_URL =
+  "https://wa.me/3931904646?text=" +
+  encodeURIComponent("Ciao, vorrei ordinare una torta gelato");
+const MAPS_URL =
+  "https://www.google.com/maps/dir/?api=1&destination=" +
+  encodeURIComponent("Via Goffredo Mameli 2/D, 22071 Cadorago CO");
 
 const capolavori = [
   {
@@ -32,7 +36,8 @@ const capolavori = [
     tag: "Signature",
     note: "Cheesecake al mango con coulis di frutti rossi, meringhe frantumate e bosco di more.",
     meta: ["Mango", "Lamponi", "Meringa"],
-    img: cdn(torFrutti.url),
+    img: torFrutti,
+    alt: "Torta gelato Tropical Sunrise con mango, frutti rossi e meringhe",
     accent: "from-amber-300 via-rose-400 to-fuchsia-500",
   },
   {
@@ -41,7 +46,8 @@ const capolavori = [
     tag: "Compleanno",
     note: "Panna azzurro cielo, fragole fresche, cioccolato bianco e fondente, scritta a mano libera.",
     meta: ["Panna", "Fragole", "Cioccolato"],
-    img: cdn(torPe.url),
+    img: torPe,
+    alt: "Torta di compleanno Tanti Auguri Pe' con panna azzurra e fragole fresche",
     accent: "from-sky-300 via-cyan-400 to-blue-500",
   },
   {
@@ -50,7 +56,8 @@ const capolavori = [
     tag: "Festa Mamma",
     note: "Torta a cuore con petali di pansé edibili, gocce di coulis e cornice rosa antico.",
     meta: ["Cuore", "Pansé", "Rosa"],
-    img: cdn(torMamma.url),
+    img: torMamma,
+    alt: "Torta gelato a forma di cuore Cuore di Mamma con petali di pansé edibili",
     accent: "from-rose-300 via-pink-400 to-red-500",
   },
   {
@@ -59,7 +66,8 @@ const capolavori = [
     tag: "Stagionale",
     note: "Ghirlanda di frutta fresca su base allo yogurt: anguria, pesche, mirtilli e crumble.",
     meta: ["Anguria", "Pesca", "Crumble"],
-    img: cdn(torFrutta.url),
+    img: torFrutta,
+    alt: "Torta gelato Frutteto d'Estate con anguria, pesche, mirtilli e crumble",
     accent: "from-lime-300 via-emerald-400 to-teal-500",
   },
   {
@@ -68,7 +76,8 @@ const capolavori = [
     tag: "Editor's Pick",
     note: "Nuvole di crema alla fragola, colata di frutti rossi al centro, perle di cioccolato bianco.",
     meta: ["Fragole", "Cioccolato bianco", "Menta"],
-    img: cdn(torFragole.url),
+    img: torFragole,
+    alt: "Torta gelato Fragole e Passione con crema alla fragola e cioccolato bianco",
     accent: "from-pink-300 via-rose-500 to-red-600",
   },
   {
@@ -77,7 +86,8 @@ const capolavori = [
     tag: "Kids",
     note: "Torta a tema Minnie con arcobaleno di zucchero, cuori pastello e palloncini in cioccolato.",
     meta: ["Fragole", "Arcobaleno", "Palloncini"],
-    img: cdn(torMinnie.url),
+    img: torMinnie,
+    alt: "Torta bimbi Nicole in Balloon Land a tema Minnie con arcobaleno e palloncini",
     accent: "from-fuchsia-300 via-pink-400 to-rose-500",
   },
   {
@@ -86,7 +96,8 @@ const capolavori = [
     tag: "Bold",
     note: "Pennellate di panna colorata: giallo limone, azzurro cobalto, verde acqua e rosso ciliegia.",
     meta: ["Vaniglia", "Colori", "Pop"],
-    img: cdn(torPopArt.url),
+    img: torPopArt,
+    alt: "Torta gelato Pop Art Frosting con pennellate di panna colorata",
     accent: "from-yellow-300 via-cyan-400 to-red-500",
   },
   {
@@ -95,7 +106,8 @@ const capolavori = [
     tag: "Milestone",
     note: "Panna montata a mano, corona di frutti rossi, physalis dorati e viticci di pisello dolce.",
     meta: ["Physalis", "More", "Piselli dolci"],
-    img: cdn(torQuaranta.url),
+    img: torQuaranta,
+    alt: "Torta 40 anni Quaranta di Fiaba con panna, frutti rossi e physalis",
     accent: "from-neutral-200 via-rose-300 to-amber-400",
   },
   {
@@ -104,7 +116,8 @@ const capolavori = [
     tag: "Kids",
     note: "Panna soffice a nuvola, Smarties, wafer croccanti e topper Happy Birthday kawaii.",
     meta: ["Smarties", "Wafer", "Kawaii"],
-    img: cdn(torCamilla.url),
+    img: torCamilla,
+    alt: "Torta bimbi Camilla Kitty Party con Smarties, wafer e topper kawaii",
     accent: "from-violet-300 via-fuchsia-400 to-pink-500",
   },
 ];
@@ -126,7 +139,9 @@ export const Route = createFileRoute("/")({
         content: "Dal 1999 yogurt, gelato, crêpes e torte gelato artigianali. Cadorago (CO).",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "https://magic-project-copy.lovable.app/" },
+      { property: "og:url", content: `${SITE_URL}/` },
+      { property: "og:image", content: `${SITE_URL}/favicon.jpg` },
+      { name: "twitter:image", content: `${SITE_URL}/favicon.jpg` },
       { property: "og:locale", content: "it_IT" },
       { property: "og:site_name", content: "El Sabor" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -134,7 +149,7 @@ export const Route = createFileRoute("/")({
       { name: "geo.placename", content: "Cadorago" },
     ],
     links: [
-      { rel: "canonical", href: "https://magic-project-copy.lovable.app/" },
+      { rel: "canonical", href: `${SITE_URL}/` },
     ],
     scripts: [
       {
@@ -145,16 +160,28 @@ export const Route = createFileRoute("/")({
           name: "El Sabor La Yogurteria",
           description:
             "Yogurteria, gelateria e crêperie artigianale a Cadorago dal 1999. Torte gelato su misura e vaschette da asporto.",
-          image: "https://magic-project-copy.lovable.app/favicon.jpg",
-          url: "https://magic-project-copy.lovable.app/",
-          telephone: "+39 031 904646",
+          image: `${SITE_URL}/favicon.jpg`,
+          url: `${SITE_URL}/`,
+          telephone: PHONE_TEL,
           priceRange: "€€",
           address: {
             "@type": "PostalAddress",
+            streetAddress: "Via Goffredo Mameli 2/D",
             addressLocality: "Cadorago",
             addressRegion: "CO",
+            postalCode: "22071",
             addressCountry: "IT",
           },
+          openingHoursSpecification: [
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday",
+              ],
+              opens: "12:00",
+              closes: "23:30",
+            },
+          ],
           sameAs: [
             "https://www.instagram.com/elsabor_layogurteria/",
             "https://www.facebook.com/elsaborlayogurteria/",
@@ -490,7 +517,7 @@ function Index() {
                   <div className="relative aspect-square overflow-hidden">
                     <img
                       src={c.img}
-                      alt={c.name}
+                      alt={c.alt}
                       loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-[1400ms] ease-out-expo group-hover:scale-110"
                     />
@@ -649,7 +676,7 @@ function Index() {
             <div className="md:col-span-3 flex md:justify-end">
               <div className="relative w-36 h-48 md:w-44 md:h-60 rounded-[2rem] overflow-hidden shadow-2xl rotate-3 ring-1 ring-foreground/10">
                 <img
-                  src={cdn(coppaCioccolato.url)}
+                  src={coppaCioccolato}
                   alt="Coppa di yogurt con cioccolato in preparazione"
                   loading="lazy"
                   className="w-full h-full object-cover"
@@ -852,6 +879,7 @@ function Index() {
                 n: "01",
                 l: "Indirizzo",
                 v: "Via Goffredo Mameli 2/D, 22071 Cadorago (CO)",
+                href: MAPS_URL,
               },
               { n: "02", l: "Orari", v: "Tutti i giorni: 12:00 – 23:30" },
             ].map((row) => (
@@ -863,7 +891,18 @@ function Index() {
                     <p className="font-bold uppercase tracking-widest text-[10px] text-muted-foreground mb-1">
                       {row.l}
                     </p>
-                    <p className="text-lg">{row.v}</p>
+                    {row.href ? (
+                      <a
+                        href={row.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-lg underline-offset-4 hover:underline hover:text-primary transition-colors"
+                      >
+                        {row.v}
+                      </a>
+                    ) : (
+                      <p className="text-lg">{row.v}</p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -884,12 +923,22 @@ function Index() {
                   <p className="text-muted-foreground mb-4 text-pretty">
                     Prepariamo su ordinazione torte personalizzate e vaschette di gelato artigianale nei gusti che preferisci. Chiama e ordina la tua.
                   </p>
-                  <a
-                    href="tel:+39031904646"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
-                  >
-                    📞 Ordina al 031 904646
-                  </a>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <a
+                      href={`tel:${PHONE_TEL}`}
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
+                    >
+                      📞 Chiama {PHONE_DISPLAY}
+                    </a>
+                    <a
+                      href={WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#25D366] text-white font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg"
+                    >
+                      💬 Ordina su WhatsApp
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -898,7 +947,7 @@ function Index() {
 
           <div className="relative">
             <img
-              src={cdn(shopInterior.url)}
+              src={shopInterior}
               alt="Interno del negozio El Sabor a Cadorago"
               width={800}
               height={600}
@@ -952,6 +1001,10 @@ function Index() {
         </div>
         <div className="mt-16 flex flex-col md:flex-row justify-between items-center gap-6 max-w-6xl mx-auto">
           <div className="font-display italic text-xl text-primary">El Sabor</div>
+          <div className="flex gap-6 font-mono text-[10px] uppercase tracking-widest">
+            <a href="/privacy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="/cookie" className="text-muted-foreground hover:text-primary transition-colors">Cookie Policy</a>
+          </div>
           <div className="font-mono text-[10px] tracking-widest text-muted-foreground uppercase text-center space-y-1">
             <div>El Sabor La Yogurteria — P.IVA 04117410135</div>
             <div>© {new Date().getFullYear()} El Sabor Cadorago — Yogurteria · Gelateria · Crêperie dal 1999</div>
